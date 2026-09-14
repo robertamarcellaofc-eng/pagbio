@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roberta Marcela Estética — Links Oficiais</title>
+  <meta name="description" content="Agendamento de consultas, tratamentos corporais e faciais, protocolos exclusivos e contato direto com Roberta Marcela Estética.">
+
+  <!-- Fontes de Luxo: Poppins & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* =========================================================
+       TEMA: LIGHT MODERNO PREMIUM MINIMALISTA (Fundo Branco Puro & Bege Seda)
+       Identidade: Roberta Marcela Estética (Wine, Rose, Ouro Champanhe & Branco)
+       ========================================================= */
+    :root {
+      --bg-light: #FFFFFF;
+      --bg-cream: #FCFAF8;
+      --bg-soft: #F9F5F2;
+      --surface-card: #FFFFFF;
+      --surface-card-hover: #FDFBF9;
+      
+      /* Cores de Assinatura Roberta Marcela */
+      --color-wine: #8E5A5A;
+      --color-wine-dark: #6D3D3D;
+      --color-wine-soft: rgba(142, 90, 90, 0.08);
+      --color-rose: #D9A9A4;
+      --color-gold: #CBAE83;
+      --color-gold-dark: #A58452;
+      
+      --text-dark: #292020;
+      --text-sub: #524747;
+      --text-muted: #7E7070;
+      --text-dim: #A89B9B;
+      
+      --border-card: rgba(203, 174, 131, 0.28);
+      --border-card-hover: rgba(142, 90, 90, 0.45);
+      
+      --shadow-luxury: 0 14px 34px -6px rgba(142, 90, 90, 0.08), 0 4px 14px -2px rgba(51, 43, 43, 0.04);
+      --shadow-luxury-hover: 0 20px 42px -6px rgba(142, 90, 90, 0.16), 0 8px 20px -2px rgba(203, 174, 131, 0.12);
+      --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 48px 18px 64px;
+      position: relative;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* =========================================================
+       FUNDO PREMIUM — SEDA BRANCA COM LUZ DE ESTÚDIO & OURO
+       ========================================================= */
+
+    /* Base: seda branca com veios de luz dourada e rosé */
+    .ambient-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+      background:
+        /* Luz de estúdio principal — cone descendente */
+        radial-gradient(ellipse 80% 55% at 50% -5%,
+          rgba(255, 248, 242, 1) 0%,
+          rgba(247, 232, 224, 0.7) 30%,
+          rgba(255,255,255,0) 68%),
+        /* Reflexo ouro esquerdo */
+        radial-gradient(ellipse 55% 45% at -8% 38%,
+          rgba(203, 174, 131, 0.22) 0%,
+          rgba(255,255,255,0) 60%),
+        /* Reflexo rosé direito */
+        radial-gradient(ellipse 55% 45% at 108% 55%,
+          rgba(233, 197, 194, 0.28) 0%,
+          rgba(255,255,255,0) 60%),
+        /* Vinheta inferior suave — mantém branco no centro */
+        radial-gradient(ellipse 90% 50% at 50% 115%,
+          rgba(203, 174, 131, 0.14) 0%,
+          rgba(255,255,255,0) 55%),
+        /* Base absoluta: branco puro */
+        #FFFFFF;
+    }
+
+    /* Feixe de luz de estúdio dramático — spot central */
+    .spotlight-beam {
+      position: absolute;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(1000px, 130vw);
+      height: 700px;
+      background:
+        conic-gradient(from 265deg at 50% 0%,
+          rgba(255,255,255,0) 0deg,
+          rgba(255, 245, 235, 0.55) 25deg,
+          rgba(247, 221, 208, 0.45) 35deg,
+          rgba(255,255,255,0) 50deg);
+      filter: blur(38px);
+      pointer-events: none;
+      animation: spotlightPulse 9s ease-in-out infinite alternate;
+    }
+
+    @keyframes spotlightPulse {
+      0%   { opacity: 0.6; transform: translateX(-50%) scaleX(0.9); }
+      100% { opacity: 1;   transform: translateX(-50%) scaleX(1.05); }
+    }
+
+    /* Orbes de luz orgânicas */
+    .glow-sphere { position: absolute; border-radius: 50%; pointer-events: none; }
+
+    .glow-1 {
+      width: 620px; height: 620px;
+      top: -140px; left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(circle,
+        rgba(255, 235, 220, 0.55) 0%,
+        rgba(233, 197, 194, 0.38) 38%,
+        rgba(203, 174, 131, 0.18) 62%,
+        transparent 80%);
+      filter: blur(75px);
+      animation: ambientBreathe 11s ease-in-out infinite alternate;
+    }
+
+    .glow-2 {
+      width: 500px; height: 500px;
+      bottom: 2%; right: -12%;
+      background: radial-gradient(circle,
+        rgba(203, 174, 131, 0.3) 0%,
+        rgba(233, 197, 194, 0.2) 45%,
+        transparent 72%);
+      filter: blur(90px);
+      animation: ambientDriftRight 15s ease-in-out infinite alternate;
+    }
+
+    .glow-3 {
+      width: 460px; height: 460px;
+      bottom: 18%; left: -10%;
+      background: radial-gradient(circle,
+        rgba(233, 197, 194, 0.38) 0%,
+        rgba(203, 174, 131, 0.18) 45%,
+        transparent 72%);
+      filter: blur(85px);
+      animation: ambientDriftLeft 13s ease-in-out infinite alternate;
+    }
+
+    /* Orbe extra — brilho ouro no centro-meio */
+    .glow-4 {
+      width: 360px; height: 180px;
+      top: 42%; left: 50%;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse,
+        rgba(203, 174, 131, 0.13) 0%,
+        transparent 70%);
+      filter: blur(55px);
+      animation: ambientBreathe 16s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes ambientBreathe {
+      0%   { transform: translateX(-50%) scale(0.92); opacity: 0.55; }
+      100% { transform: translateX(-50%) scale(1.12); opacity: 1; }
+    }
+    @keyframes ambientDriftRight {
+      0%   { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-40px, -55px) scale(1.12); }
+    }
+    @keyframes ambientDriftLeft {
+      0%   { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(45px, -35px) scale(1.1); }
+    }
+
+    /* Banda horizontal de luz — como reflexo de teto */
+    .light-band {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(203, 174, 131, 0.0) 10%,
+        rgba(233, 210, 180, 0.7) 35%,
+        rgba(255, 248, 236, 0.9) 50%,
+        rgba(233, 210, 180, 0.7) 65%,
+        rgba(203, 174, 131, 0.0) 90%,
+        transparent 100%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Grid de pontos de diamante ultra-finos */
+    .ambient-grid {
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle, rgba(142, 90, 90, 0.055) 1px, transparent 1px);
+      background-size: 30px 30px;
+      pointer-events: none;
+      z-index: 0;
+      mask-image: radial-gradient(ellipse 75% 60% at 50% 35%, black 15%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 35%, black 15%, transparent 75%);
+    }
+
+    /* Textura orgânica sedosa */
+    .ambient-noise {
+      position: fixed;
+      inset: 0;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Auréolas concêntricas decorativas no topo (zen) */
+    .zen-rings {
+      position: absolute;
+      top: -140px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 750px; height: 750px;
+      border-radius: 50%;
+      border: 1px solid rgba(203, 174, 131, 0.18);
+      box-shadow:
+        0 0 0 60px  rgba(233, 197, 194, 0.06),
+        0 0 0 130px rgba(203, 174, 131, 0.04),
+        0 0 0 210px rgba(233, 197, 194, 0.03);
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 68%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 68%);
+      animation: zenSpin 60s linear infinite;
+    }
+
+    @keyframes zenSpin {
+      from { transform: translateX(-50%) rotate(0deg); }
+      to   { transform: translateX(-50%) rotate(360deg); }
+    }
+
+    /* Container Principal */
+    .bio-card-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 530px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+      animation: fadeInPage 0.85s var(--ease-luxury) forwards;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =========================================================
+       1. FOTO NO MEIO NA PARTE SUPERIOR (Minimalista & Luxo Claro)
+       ========================================================= */
+    .profile-avatar-area {
+      position: relative;
+      margin-top: 6px;
+    }
+
+    .avatar-halo {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(233, 197, 194, 0.7), rgba(203, 174, 131, 0.5), rgba(142, 90, 90, 0.3));
+      filter: blur(12px);
+      opacity: 0.65;
+      animation: pulseHalo 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseHalo {
+      0% { opacity: 0.45; transform: scale(0.97); }
+      100% { opacity: 0.85; transform: scale(1.05); }
+    }
+
+    .avatar-outer-ring {
+      position: relative;
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(145deg, #E9C5C2 0%, #CBAE83 50%, #8E5A5A 100%);
+      box-shadow: 0 12px 28px rgba(142, 90, 90, 0.18);
+    }
+
+    .avatar-image {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      border: 3px solid #FFFFFF;
+      background-color: #FBF1EC;
+    }
+
+    .seal-certified {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #CBAE83, #A58452);
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2.5px solid #FFFFFF;
+      box-shadow: 0 4px 10px rgba(142, 90, 90, 0.2);
+    }
+
+    .seal-certified svg {
+      width: 15px;
+      height: 15px;
+      stroke-width: 3;
+    }
+
+    /* =========================================================
+       2. NOME H1 ABAIXO & DESCRIÇÃO BIO
+       ========================================================= */
+    .profile-heading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Nome Roberta Marcella Todo Dourado */
+    .profile-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.75rem, 5.4vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      background: linear-gradient(135deg, #B58A46 0%, #D4AF37 35%, #F3E5AB 55%, #AA7C36 80%, #C49746 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 8px rgba(181, 138, 70, 0.2));
+    }
+
+    .tag-aesthetic {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(203, 174, 131, 0.15) 0%, rgba(233, 197, 194, 0.2) 100%);
+      border: 1px solid rgba(203, 174, 131, 0.4);
+      padding: 5px 16px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #946927;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      box-shadow: 0 2px 8px rgba(203, 174, 131, 0.15);
+    }
+
+    .profile-bio-description {
+      font-size: 0.95rem;
+      line-height: 1.62;
+      color: var(--text-sub);
+      max-width: 440px;
+      margin-top: 3px;
+      font-weight: 400;
+    }
+
+    .profile-bio-description strong {
+      color: var(--color-wine);
+      font-weight: 600;
+    }
+
+    /* =========================================================
+       LINHA LETREIRO INFINITO (Marquee: Roberta Marcella Estética Avançada)
+       ========================================================= */
+    .marquee-strip {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      padding: 10px 0;
+      margin: 2px 0 6px;
+      background: linear-gradient(90deg, rgba(233, 197, 194, 0.25) 0%, rgba(203, 174, 131, 0.2) 50%, rgba(233, 197, 194, 0.25) 100%);
+      border-top: 1px solid rgba(203, 174, 131, 0.35);
+      border-bottom: 1px solid rgba(203, 174, 131, 0.35);
+      border-radius: 12px;
+      mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 2rem;
+      animation: marqueeInfinite 24s linear infinite;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #946927;
+    }
+
+    .marquee-item .sparkle-bullet {
+      color: var(--color-wine);
+      font-size: 0.85rem;
+      opacity: 0.9;
+    }
+
+    @keyframes marqueeInfinite {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* =========================================================
+       3. PLAY DE VÍDEO (Estética Minimalista Cinema no Fundo Claro)
+       ========================================================= */
+    .video-card-section {
+      width: 100%;
+      margin: 4px 0 8px;
+    }
+
+    .video-player-frame {
+      position: relative;
+      width: 100%;
+      border-radius: 20px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-card);
+      padding: 8px;
+      box-shadow: var(--shadow-luxury);
+      transition: all 0.35s var(--ease-luxury);
+    }
+
+    .video-player-frame:hover {
+      border-color: var(--border-card-hover);
+      box-shadow: var(--shadow-luxury-hover);
+      transform: translateY(-2px);
+    }
+
+    .video-ratio-box {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 Cinema */
+      border-radius: 14px;
+      overflow: hidden;
+      background: #2B1A1A;
+    }
+
+    .video-ratio-box iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* Capa Interativa com Play Button */
+    .video-cover-layer {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.4s ease;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .video-cover-layer.is-active {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .video-tint {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(51, 43, 43, 0.15) 0%, rgba(51, 43, 43, 0.72) 100%);
+      transition: background 0.3s ease;
+    }
+
+    .video-cover-layer:hover .video-tint {
+      background: linear-gradient(180deg, rgba(51, 43, 43, 0.08) 0%, rgba(51, 43, 43, 0.8) 100%);
+    }
+
+    .badge-video-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 3;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(203, 174, 131, 0.45);
+      backdrop-filter: blur(8px);
+      border-radius: 6px;
+      padding: 4px 9px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: #946927;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .badge-video-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--color-wine);
+      border-radius: 50%;
+      box-shadow: 0 0 6px var(--color-wine);
+    }
+
+    .play-btn-circle {
+      position: relative;
+      z-index: 3;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FAF4EF 100%);
+      border: 1.5px solid rgba(203, 174, 131, 0.5);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-wine-dark);
+      box-shadow: 0 10px 24px rgba(51, 43, 43, 0.28);
+      transition: all 0.35s var(--ease-luxury);
+    }
+
+    .play-btn-circle svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--color-wine);
+      stroke: var(--color-wine);
+      margin-left: 3px;
+    }
+
+    .video-cover-layer:hover .play-btn-circle {
+      transform: scale(1.1);
+      background: #FFFFFF;
+      box-shadow: 0 14px 30px rgba(142, 90, 90, 0.32);
+    }
+
+    .video-foot-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 10px 4px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .video-foot-meta span {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--text-sub);
+      font-weight: 500;
+    }
+
+    /* =========================================================
+       4. BOTÕES / LINKS DE AÇÃO (Padrão 100% Igual, Moderno & Luxuoso)
+       ========================================================= */
+    .links-column {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .bio-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 22px;
+      min-height: 76px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FAF6F3 100%);
+      border: 1.5px solid rgba(203, 174, 131, 0.38);
+      border-radius: 20px;
+      text-decoration: none;
+      color: var(--text-dark);
+      box-shadow: 0 8px 22px -4px rgba(142, 90, 90, 0.08), 0 2px 6px -1px rgba(203, 174, 131, 0.06);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    /* Feixe de luz reflexivo suave no hover */
+    .bio-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 80%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent);
+      transform: skewX(-25deg);
+      transition: all 0.75s ease;
+      pointer-events: none;
+    }
+
+    .bio-btn:hover::before {
+      left: 140%;
+    }
+
+    .bio-btn:hover {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F5ECE6 100%);
+      border-color: rgba(142, 90, 90, 0.5);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px -6px rgba(142, 90, 90, 0.16), 0 4px 14px rgba(203, 174, 131, 0.14);
+    }
+
+    .btn-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(233, 197, 194, 0.35) 0%, rgba(203, 174, 131, 0.25) 100%);
+      border: 1px solid rgba(203, 174, 131, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-wine);
+      flex-shrink: 0;
+      box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .icon-box svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .bio-btn:hover .icon-box {
+      background: linear-gradient(135deg, var(--color-wine) 0%, #6D3D3D 100%);
+      border-color: var(--color-wine);
+      color: #FFFFFF;
+      transform: scale(1.08) rotate(-4deg);
+      box-shadow: 0 6px 14px rgba(142, 90, 90, 0.25);
+    }
+
+    .btn-texts {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .btn-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+      transition: color 0.3s ease;
+    }
+
+    .bio-btn:hover .btn-title {
+      color: var(--color-wine-dark);
+    }
+
+    .btn-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .btn-arrow {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(203, 174, 131, 0.12);
+      border: 1px solid rgba(203, 174, 131, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+    }
+
+    .bio-btn:hover .btn-arrow {
+      background: var(--color-wine);
+      border-color: var(--color-wine);
+      color: #FFFFFF;
+      transform: translateX(4px);
+      box-shadow: 0 4px 10px rgba(142, 90, 90, 0.2);
+    }
+
+    /* =========================================================
+       5. RODAPÉ E LOCALIZAÇÃO
+       ========================================================= */
+    .bio-footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+    .bio-footer .location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--color-wine);
+      font-weight: 500;
+    }
+
+    .bio-footer strong {
+      color: var(--color-wine-dark);
+      font-weight: 600;
+    }
+
+    /* =========================================================
+       DOBRA: DEPOIMENTOS
+       ========================================================= */
+    .testimonials-section {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-gold-dark);
+      margin-bottom: 14px;
+    }
+
+    .section-label::before,
+    .section-label::after {
+      content: '';
+      flex: 1;
+      max-width: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(203,174,131,0.6));
+    }
+    .section-label::after {
+      background: linear-gradient(90deg, rgba(203,174,131,0.6), transparent);
+    }
+
+    .testimonials-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .testi-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FDF8F5 100%);
+      border: 1.5px solid rgba(203,174,131,0.3);
+      border-radius: 18px;
+      padding: 18px 20px;
+      position: relative;
+      box-shadow: 0 4px 18px -4px rgba(142,90,90,0.07);
+      transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+      overflow: hidden;
+      text-align: left;
+    }
+
+    .testi-card::before {
+      content: '\201C';
+      position: absolute;
+      top: -4px;
+      right: 16px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 4.5rem;
+      line-height: 1;
+      font-weight: 700;
+      background: linear-gradient(135deg, rgba(203,174,131,0.22), rgba(142,90,90,0.15));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      pointer-events: none;
+    }
+
+    .testi-card:hover {
+      border-color: rgba(142,90,90,0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px -6px rgba(142,90,90,0.13);
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: 3px;
+      margin-bottom: 8px;
+    }
+
+    .testi-stars span {
+      font-size: 0.85rem;
+      color: var(--color-gold);
+    }
+
+    .testi-text {
+      font-size: 0.88rem;
+      line-height: 1.62;
+      color: var(--text-sub);
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .testi-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-rose), var(--color-gold));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.9);
+      box-shadow: 0 2px 8px rgba(142,90,90,0.15);
+    }
+
+    .testi-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .testi-service {
+      font-size: 0.74rem;
+      color: var(--color-wine);
+      font-weight: 500;
+    }
+
+    .testi-badge-verified {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: #3BAF6A;
+      background: rgba(59,175,106,0.09);
+      border: 1px solid rgba(59,175,106,0.25);
+      border-radius: 999px;
+      padding: 3px 8px;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================
+       DOBRA: FAQ — PERGUNTAS FREQUENTES
+       ========================================================= */
+    .faq-section {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FDF8F5 100%);
+      border: 1.5px solid rgba(203,174,131,0.28);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .faq-item.open {
+      border-color: rgba(142,90,90,0.45);
+      box-shadow: 0 8px 24px -6px rgba(142,90,90,0.1);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      transition: color 0.3s ease;
+    }
+
+    .faq-item.open .faq-question {
+      color: var(--color-wine-dark);
+    }
+
+    .faq-question-text {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .faq-icon-box {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(233,197,194,0.3), rgba(203,174,131,0.2));
+      border: 1px solid rgba(203,174,131,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-wine);
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item.open .faq-icon-box {
+      background: linear-gradient(135deg, var(--color-wine), #6D3D3D);
+      color: #FFFFFF;
+      border-color: var(--color-wine);
+    }
+
+    .faq-chevron {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(203,174,131,0.1);
+      border: 1px solid rgba(203,174,131,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: all 0.35s cubic-bezier(0.16,1,0.3,1);
+    }
+
+    .faq-item.open .faq-chevron {
+      background: var(--color-wine);
+      border-color: var(--color-wine);
+      color: #FFFFFF;
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.16,1,0.3,1), padding 0.35s ease;
+      padding: 0 18px;
+    }
+
+    .faq-answer-inner {
+      border-top: 1px solid rgba(203,174,131,0.2);
+      padding: 14px 0 16px;
+      font-size: 0.87rem;
+      line-height: 1.65;
+      color: var(--text-sub);
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding: 0 18px;
+    }
+
+    /* Ajustes Mobile */
+    @media (max-width: 480px) {
+      body {
+        padding: 38px 14px 50px;
+      }
+      .avatar-outer-ring {
+        width: 106px;
+        height: 106px;
+      }
+      .bio-btn {
+        padding: 14px 16px;
+      }
+      .icon-box {
+        width: 40px;
+        height: 40px;
+      }
+      .play-btn-circle {
+        width: 54px;
+        height: 54px;
+      }
+      .play-btn-circle svg {
+        width: 20px;
+        height: 20px;
+      }
+      .marquee-item {
+        font-size: 0.72rem;
+        gap: 0.5rem;
+      }
+      .faq-question {
+        font-size: 0.84rem;
+        padding: 14px 14px;
+      }
+      .testi-card {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Efeitos de iluminação de fundo claros (Rosé, Ouro & Seda) -->
+  <div class="ambient-bg">
+    <div class="spotlight-beam"></div>
+    <div class="zen-rings"></div>
+    <div class="glow-sphere glow-1"></div>
+    <div class="glow-sphere glow-2"></div>
+    <div class="glow-sphere glow-3"></div>
+    <div class="ambient-grid"></div>
+    <div class="ambient-noise"></div>
+  </div>
+
+  <!-- Cartão / Conteúdo Central da Bio -->
+  <main class="bio-card-wrapper">
+
+    <!-- 1. FOTO NO MEIO NA PARTE SUPERIOR -->
+    <div class="profile-avatar-area">
+      <div class="avatar-halo"></div>
+      <div class="avatar-outer-ring">
+        <img 
+          src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=900&auto=format&fit=crop" 
+          alt="Roberta Marcela Estética" 
+          class="avatar-image"
+        >
+      </div>
+      <!-- Selo de especialista certificada -->
+      <div class="seal-certified" title="Profissional Certificada">
+        <i data-lucide="check"></i>
+      </div>
+    </div>
+
+    <!-- 2. NOME H1 ABAIXO & DESCRIÇÃO BIO -->
+    <header class="profile-heading">
+      <h1 class="profile-title">Roberta Marcella</h1>
+      <div class="tag-aesthetic">
+        <i data-lucide="sparkles" style="width: 12px; height: 12px;"></i>
+        Estética Avançada
+      </div>
+
+      <!-- DESCRIÇÃO DA BIO -->
+      <p class="profile-bio-description">
+        Tratamentos personalizados, seguros e humanizados pensados para realçar a sua <strong>beleza natural e autoestima</strong> com técnica e delicadeza.
+      </p>
+    </header>
+
+    <!-- LINHA COM NOME PASSANDO INFINITO (MARQUEE) -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <span class="marquee-item">ROBERTA MARCELLA ESTÉTICA AVANÇADA <span class="sparkle-bullet">✦</span></span>
+        <span class="marquee-item">CUIDADO QUE VALORIZA SUA BELEZA <span class="sparkle-bullet">✦</span></span>
+        <span class="marquee-item">ROBERTA MARCELLA ESTÉTICA AVANÇADA <span class="sparkle-bullet">✦</span></span>
+        <span class="marquee-item">ATENDIMENTO HUMANIZADO & EXCLUSIVO <span class="sparkle-bullet">✦</span></span>
+        <!-- Duplicado para loop infinito fluído -->
+        <span class="marquee-item">ROBERTA MARCELLA ESTÉTICA AVANÇADA <span class="sparkle-bullet">✦</span></span>
+        <span class="marquee-item">CUIDADO QUE VALORIZA SUA BELEZA <span class="sparkle-bullet">✦</span></span>
+        <span class="marquee-item">ROBERTA MARCELLA ESTÉTICA AVANÇADA <span class="sparkle-bullet">✦</span></span>
+        <span class="marquee-item">ATENDIMENTO HUMANIZADO & EXCLUSIVO <span class="sparkle-bullet">✦</span></span>
+      </div>
+    </div>
+
+    <!-- 3. PLAY DE VÍDEO (Design Cinema Dark/Claro) -->
+    <section class="video-card-section">
+      <div class="video-player-frame">
+        <div class="video-ratio-box">
+          
+          <!-- Capa com Play Button -->
+          <div class="video-cover-layer" id="videoCoverLayer" onclick="playVideo()">
+            <img 
+              src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=1200&h=1000&auto=format&fit=crop" 
+              alt="Ambiente Roberta Marcela Estética" 
+              style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;"
+            >
+            <div class="video-tint"></div>
+
+            <div class="badge-video-tag">
+              EXPERIÊNCIA ACOLHEDORA
+            </div>
+
+            <button class="play-btn-circle" aria-label="Reproduzir Vídeo de Apresentação">
+              <i data-lucide="play"></i>
+            </button>
+          </div>
+
+          <!-- Iframe do Vídeo -->
+          <iframe 
+            id="videoIframe"
+            src="" 
+            data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0&modestbranding=1" 
+            title="Apresentação Roberta Marcela Estética" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <div class="video-foot-meta">
+          <span><i data-lucide="play-circle" style="width: 14px; height: 14px; color: var(--color-wine);"></i> Conheça nosso espaço e atendimento</span>
+          <span>01:30 min</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. BOTÕES E LINKS DE ATENDIMENTO -->
+    <div class="links-column">
+
+      <!-- Link 1: Agendar no WhatsApp -->
+      <a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20personalizada." target="_blank" rel="noopener noreferrer" class="bio-btn">
+        <div class="btn-left">
+          <div class="icon-box">
+            <i data-lucide="calendar-heart"></i>
+          </div>
+          <div class="btn-texts">
+            <span class="btn-title">Agendar Avaliação Personalizada</span>
+            <span class="btn-sub">Atendimento exclusivo com hora marcada</span>
+          </div>
+        </div>
+        <div class="btn-arrow">
+          <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+        </div>
+      </a>
+
+      <!-- Link 2: Menu de Tratamentos -->
+      <a href="roberta-marcela-estetica (1).html#tratamentos" target="_blank" rel="noopener noreferrer" class="bio-btn">
+        <div class="btn-left">
+          <div class="icon-box">
+            <i data-lucide="sparkles"></i>
+          </div>
+          <div class="btn-texts">
+            <span class="btn-title">Menu de Procedimentos</span>
+            <span class="btn-sub">Limpeza de pele, rejuvenescimento e estética corporal</span>
+          </div>
+        </div>
+        <div class="btn-arrow">
+          <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+        </div>
+      </a>
+
+      <!-- Link 3: Conhecer a Clínica / Site Completo -->
+      <a href="roberta-marcela-estetica (1).html" target="_blank" rel="noopener noreferrer" class="bio-btn">
+        <div class="btn-left">
+          <div class="icon-box">
+            <i data-lucide="gem"></i>
+          </div>
+          <div class="btn-texts">
+            <span class="btn-title">Conheça Nossa História & Espaço</span>
+            <span class="btn-sub">Descubra nosso método humanizado de cuidado</span>
+          </div>
+        </div>
+        <div class="btn-arrow">
+          <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+        </div>
+      </a>
+
+      <!-- Link 4: Localização e Como Chegar -->
+      <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="bio-btn">
+        <div class="btn-left">
+          <div class="icon-box">
+            <i data-lucide="map-pin"></i>
+          </div>
+          <div class="btn-texts">
+            <span class="btn-title">Como Chegar ao Consultório</span>
+            <span class="btn-sub">Localização nobre, segura e com estacionamento</span>
+          </div>
+        </div>
+        <div class="btn-arrow">
+          <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- =====================================================
+         DOBRA 5 — DEPOIMENTOS DE CLIENTES
+         ===================================================== -->
+    <section class="testimonials-section">
+      <div class="section-label">
+        <i data-lucide="star" style="width: 12px; height: 12px;"></i>
+        O que nossas clientes dizem
+      </div>
+
+      <div class="testimonials-grid">
+
+        <!-- Depoimento 1 -->
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="testi-text">"Minha pele nunca esteve tão bonita! O atendimento da Roberta é incrível, super atencioso e personalizado. Me senti acolhida do início ao fim."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Ana Paula S.</div>
+              <div class="testi-service">Limpeza de Pele Profunda</div>
+            </div>
+            <div class="testi-badge-verified">
+              <i data-lucide="check" style="width: 10px; height: 10px;"></i>
+              Verificado
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 2 -->
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="testi-text">"Fiz o protocolo de rejuvenescimento e os resultados superaram todas as minhas expectativas! Profissional extremamente capacitada e dedicada."</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #8E5A5A, #CBAE83);">C</div>
+            <div>
+              <div class="testi-name">Camila R.</div>
+              <div class="testi-service">Protocolo Rejuvenescimento</div>
+            </div>
+            <div class="testi-badge-verified">
+              <i data-lucide="check" style="width: 10px; height: 10px;"></i>
+              Verificado
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimento 3 -->
+        <div class="testi-card">
+          <div class="testi-stars">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p class="testi-text">"Ambiente lindo, cheiroso e aconchegante. A Roberta explica cada etapa do tratamento com clareza. Com certeza voltarei e recomendo demais!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar" style="background: linear-gradient(135deg, #D9A9A4, #8E5A5A);">M</div>
+            <div>
+              <div class="testi-name">Mariana F.</div>
+              <div class="testi-service">Estética Corporal</div>
+            </div>
+            <div class="testi-badge-verified">
+              <i data-lucide="check" style="width: 10px; height: 10px;"></i>
+              Verificado
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================
+         DOBRA 6 — FAQ: PERGUNTAS FREQUENTES
+         ===================================================== -->
+    <section class="faq-section">
+      <div class="section-label">
+        <i data-lucide="message-circle-question" style="width: 12px; height: 12px;"></i>
+        Perguntas Frequentes
+      </div>
+
+      <div class="faq-list" id="faqList">
+
+        <!-- FAQ 1 -->
+        <div class="faq-item" id="faq-1">
+          <button class="faq-question" onclick="toggleFaq('faq-1')" aria-expanded="false">
+            <div class="faq-question-text">
+              <div class="faq-icon-box">
+                <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
+              </div>
+              Como faço para agendar uma consulta?
+            </div>
+            <div class="faq-chevron">
+              <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              O agendamento é feito diretamente pelo WhatsApp, de forma rápida e simples. Basta clicar no botão "Agendar Avaliação Personalizada" acima e enviar uma mensagem. Respondemos em poucos minutos!
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item" id="faq-2">
+          <button class="faq-question" onclick="toggleFaq('faq-2')" aria-expanded="false">
+            <div class="faq-question-text">
+              <div class="faq-icon-box">
+                <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i>
+              </div>
+              Quais tratamentos vocês oferecem?
+            </div>
+            <div class="faq-chevron">
+              <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Oferecemos uma ampla variedade de tratamentos faciais (limpeza de pele, rejuvenescimento, hidratação profunda) e corporais (drenagem linfática, modelagem, redução de medidas). Todos os protocolos são personalizados de acordo com o seu perfil e necessidade.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item" id="faq-3">
+          <button class="faq-question" onclick="toggleFaq('faq-3')" aria-expanded="false">
+            <div class="faq-question-text">
+              <div class="faq-icon-box">
+                <i data-lucide="clock" style="width: 14px; height: 14px;"></i>
+              </div>
+              Quanto tempo dura uma sessão?
+            </div>
+            <div class="faq-chevron">
+              <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              O tempo varia conforme o procedimento. Sessões faciais geralmente duram entre 60 a 90 minutos, enquanto os tratamentos corporais podem durar de 60 a 120 minutos. Na avaliação inicial, você receberá todas as informações detalhadas sobre o seu protocolo específico.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item" id="faq-4">
+          <button class="faq-question" onclick="toggleFaq('faq-4')" aria-expanded="false">
+            <div class="faq-question-text">
+              <div class="faq-icon-box">
+                <i data-lucide="shield-check" style="width: 14px; height: 14px;"></i>
+              </div>
+              Os tratamentos são seguros?
+            </div>
+            <div class="faq-chevron">
+              <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Sim! Todos os procedimentos são realizados com produtos de alta qualidade, equipamentos modernos e seguem rigorosos protocolos de biossegurança. A Roberta Marcella é profissional certificada e atualizada com as melhores técnicas do mercado estético.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-item" id="faq-5">
+          <button class="faq-question" onclick="toggleFaq('faq-5')" aria-expanded="false">
+            <div class="faq-question-text">
+              <div class="faq-icon-box">
+                <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+              </div>
+              Onde fica o consultório?
+            </div>
+            <div class="faq-chevron">
+              <i data-lucide="chevron-down" style="width: 14px; height: 14px;"></i>
+            </div>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              O consultório está localizado em uma região nobre e de fácil acesso, com estacionamento disponível nas proximidades. Após o agendamento, você receberá o endereço completo e as instruções de como chegar com facilidade.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. RODAPÉ COM COPYRIGHT 2026 ATUALIZADO -->
+    <footer class="bio-footer">
+      <div class="location-badge">
+        <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i>
+        <span>Atendimento com hora marcada</span>
+      </div>
+      <div>ROBERTA MARCELLA ESTÉTICA AVANÇADA © 2026 • <strong>TODOS OS DIREITOS RESERVADOS</strong></div>
+    </footer>
+
+  </main>
+
+  <script>
+    // Inicialização dos ícones Lucide
+    lucide.createIcons();
+
+    // Reprodução do vídeo com transição suave
+    function playVideo() {
+      const cover = document.getElementById('videoCoverLayer');
+      const iframe = document.getElementById('videoIframe');
+      
+      iframe.src = iframe.getAttribute('data-src');
+      cover.classList.add('is-active');
+    }
+
+    // FAQ Accordion — abre/fecha com animação suave
+    function toggleFaq(id) {
+      const allItems = document.querySelectorAll('.faq-item');
+      const clickedItem = document.getElementById(id);
+      const isOpen = clickedItem.classList.contains('open');
+
+      // Fecha todos os itens
+      allItems.forEach(item => {
+        item.classList.remove('open');
+        const btn = item.querySelector('.faq-question');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+
+      // Se o item clicado não estava aberto, abre ele
+      if (!isOpen) {
+        clickedItem.classList.add('open');
+        const btn = clickedItem.querySelector('.faq-question');
+        if (btn) btn.setAttribute('aria-expanded', 'true');
+      }
+
+      // Re-inicializa ícones Lucide (ícones do chevron podem mudar dinamicamente)
+      lucide.createIcons();
+    }
+  </script>
+
+</body>
+</html>
