@@ -15,7 +15,9 @@
   <!-- Fontes de Luxo: Poppins & Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
 
   <!-- Lucide Icons (versão fixada para evitar quebra por atualizações futuras).
        Carregada com CDNs de reserva: se a primeira fonte não responder (rede
@@ -302,27 +304,92 @@
     .hero-scroll-cue {
       position: absolute;
       left: 50%;
-      bottom: 16px;
-      /* Centralização também fora da animação, para continuar no lugar
-         certo quando o usuário pede "reduzir movimento" */
+      bottom: 22px;
       transform: translateX(-50%);
       z-index: 2;
       display: none;
       flex-direction: column;
       align-items: center;
-      gap: 2px;
-      color: rgba(255, 255, 255, 0.7);
-      font-size: 0.58rem;
-      font-weight: 600;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
+      gap: 8px;
       pointer-events: none;
-      animation: heroScrollFloat 2.4s ease-in-out infinite;
     }
 
-    @keyframes heroScrollFloat {
-      0%, 100% { transform: translate(-50%, 0); opacity: 0.7; }
-      50%      { transform: translate(-50%, 7px); opacity: 1; }
+    /* Texto "role" */
+    .hero-scroll-cue span {
+      font-size: 0.57rem;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.60);
+      animation: scrollCueFade 2.6s ease-in-out infinite;
+    }
+
+    /* Contêiner do mouse estilizado */
+    .hero-scroll-cue .scroll-mouse {
+      width: 26px;
+      height: 40px;
+      border: 2px solid rgba(255, 255, 255, 0.55);
+      border-radius: 13px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      animation: scrollCueFade 2.6s ease-in-out infinite;
+    }
+
+    /* Bolinha que cai dentro do mouse */
+    .hero-scroll-cue .scroll-mouse::before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      width: 4px;
+      height: 7px;
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.90);
+      animation: scrollDot 2.6s ease-in-out infinite;
+    }
+
+    /* Seta dupla abaixo do mouse */
+    .hero-scroll-cue .scroll-arrows {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1px;
+      animation: scrollArrowBounce 2.6s ease-in-out infinite;
+    }
+
+    .hero-scroll-cue .scroll-arrows svg {
+      display: block;
+      opacity: 0;
+    }
+    .hero-scroll-cue .scroll-arrows svg:nth-child(1) {
+      animation: arrowFade 2.6s ease-in-out infinite 0.0s;
+    }
+    .hero-scroll-cue .scroll-arrows svg:nth-child(2) {
+      animation: arrowFade 2.6s ease-in-out infinite 0.18s;
+    }
+
+    @keyframes scrollDot {
+      0%   { transform: translateY(0); opacity: 1; }
+      50%  { transform: translateY(14px); opacity: 0.2; }
+      55%  { transform: translateY(0); opacity: 0; }
+      60%  { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes scrollArrowBounce {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(5px); }
+    }
+
+    @keyframes arrowFade {
+      0%, 40% { opacity: 0.35; }
+      70%     { opacity: 0.90; }
+      100%    { opacity: 0.35; }
+    }
+
+    @keyframes scrollCueFade {
+      0%, 100% { opacity: 0.60; }
+      50%      { opacity: 1; }
     }
 
     /* Faixa de destaque no topo do header, na mesma cor do botão de
@@ -497,6 +564,7 @@
       margin-top: 6px;
       padding: 14px 30px;
       overflow: hidden;
+      font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.08) 100%);
       backdrop-filter: blur(14px) saturate(140%);
       -webkit-backdrop-filter: blur(14px) saturate(140%);
@@ -955,6 +1023,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      cursor: pointer;
+      text-align: left;
+      font-family: inherit;
       gap: 16px;
       padding: 18px 22px;
       min-height: 76px;
@@ -1573,8 +1644,8 @@
     }
 
     .testi-avatar {
-      width: 36px;
-      height: 36px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--color-rose), var(--color-gold));
       display: flex;
@@ -1585,8 +1656,18 @@
       font-weight: 700;
       color: #FFFFFF;
       flex-shrink: 0;
-      border: 2px solid rgba(255,255,255,0.9);
-      box-shadow: 0 2px 8px rgba(142,90,90,0.15);
+      border: 2.5px solid rgba(203,174,131,0.70);
+      box-shadow: 0 2px 10px rgba(142,90,90,0.18);
+      overflow: hidden;
+    }
+
+    .testi-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      display: block;
     }
 
     .testi-name {
@@ -1996,6 +2077,426 @@
         max-width: 980px;
       }
     }
+
+    /* =========================================================
+       DESTAQUE DA SEÇÃO DE AGENDAMENTO (ao rolar pelo botão hero)
+       ========================================================= */
+    #secao-agendar {
+      scroll-margin-top: 32px;
+    }
+
+    @keyframes btnDestaquePulse {
+      0%   { box-shadow: 0 8px 22px -4px rgba(142,90,90,0.08), 0 0 0 0   rgba(203,174,131,0.00); }
+      30%  { box-shadow: 0 8px 32px -4px rgba(142,90,90,0.20), 0 0 0 5px rgba(203,174,131,0.45); }
+      70%  { box-shadow: 0 8px 32px -4px rgba(142,90,90,0.16), 0 0 0 5px rgba(203,174,131,0.28); }
+      100% { box-shadow: 0 8px 22px -4px rgba(142,90,90,0.08), 0 0 0 0   rgba(203,174,131,0.00); }
+    }
+
+    .bio-btn.em-destaque {
+      border-color: rgba(203, 174, 131, 0.80) !important;
+      animation: btnDestaquePulse 1.6s ease-in-out 2;
+    }
+
+    /* =========================================================
+       SEÇÃO DE CONTADORES ANIMADOS
+       ========================================================= */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(203, 174, 131, 0.20);
+      border: 1px solid rgba(203, 174, 131, 0.22);
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 8px 0 4px;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      padding: 22px 12px;
+      background: linear-gradient(135deg, #FFFFFF 0%, #FAF6F3 100%);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s var(--ease-luxury), transform 0.6s var(--ease-luxury);
+    }
+    .stat-item:nth-child(2) { transition-delay: 0.10s; }
+    .stat-item:nth-child(3) { transition-delay: 0.20s; }
+
+    .stat-item.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stat-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.80rem;
+      font-weight: 700;
+      color: var(--color-wine);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-suffix {
+      font-size: 1.1rem;
+      color: var(--color-gold-dark);
+      font-weight: 700;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: #8A6A6A;
+      line-height: 1.4;
+    }
+
+    /* =========================================================
+       MODAL — ESTADO DE SUCESSO
+       ========================================================= */
+    .agend-success {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 48px 28px 40px;
+      text-align: center;
+    }
+    .agend-success.is-visible {
+      display: flex;
+    }
+    .agend-success-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e8f8f0 0%, #d4f0e3 100%);
+      border: 2px solid rgba(37, 211, 102, 0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: successPop 0.5s var(--ease-luxury) both;
+    }
+    @keyframes successPop {
+      0%   { transform: scale(0.5); opacity: 0; }
+      70%  { transform: scale(1.10); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .agend-success-icon svg {
+      animation: checkDraw 0.5s ease 0.2s both;
+      stroke-dasharray: 30;
+      stroke-dashoffset: 30;
+    }
+    @keyframes checkDraw {
+      to { stroke-dashoffset: 0; }
+    }
+    .agend-success h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--color-wine-dark);
+      margin: 0;
+    }
+    .agend-success p {
+      font-size: 0.80rem;
+      color: #7A6060;
+      line-height: 1.55;
+      margin: 0;
+      max-width: 280px;
+    }
+
+    /* =========================================================
+       MODAL DE AGENDAMENTO
+       ========================================================= */
+    .agend-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      background: rgba(51, 25, 28, 0.72);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .agend-overlay.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .agend-modal {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      max-height: 92vh;
+      overflow-y: auto;
+      background: #FDFAF7;
+      border-radius: 24px;
+      box-shadow:
+        0 32px 80px -12px rgba(51, 25, 28, 0.50),
+        0 0 0 1px rgba(203, 174, 131, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.90);
+      transform: translateY(28px) scale(0.96);
+      transition: transform 0.36s cubic-bezier(0.16, 1, 0.3, 1);
+      scrollbar-width: thin;
+      scrollbar-color: #CBAE83 #F9F3EE;
+    }
+    .agend-overlay.is-open .agend-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    /* Faixa dourada no topo */
+    .agend-modal::before {
+      content: '';
+      display: block;
+      height: 4px;
+      border-radius: 24px 24px 0 0;
+      background: linear-gradient(90deg, var(--color-wine) 0%, var(--color-gold) 50%, var(--color-wine) 100%);
+    }
+
+    .agend-header {
+      padding: 28px 28px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .agend-header-text {}
+
+    .agend-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--color-gold-dark);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .agend-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--color-wine-dark);
+      line-height: 1.3;
+      margin: 0;
+    }
+
+    .agend-subtitle {
+      font-size: 0.78rem;
+      color: #7A6060;
+      margin-top: 4px;
+      line-height: 1.5;
+    }
+
+    .agend-close {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(142, 90, 90, 0.18);
+      background: rgba(142, 90, 90, 0.06);
+      color: var(--color-wine);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      margin-top: 2px;
+    }
+    .agend-close:hover {
+      background: rgba(142, 90, 90, 0.13);
+      border-color: rgba(142, 90, 90, 0.38);
+    }
+
+    .agend-form {
+      padding: 24px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .agend-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .agend-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--color-wine-dark);
+      text-transform: uppercase;
+    }
+    .agend-label span {
+      color: var(--color-gold-dark);
+      margin-left: 2px;
+    }
+
+    .agend-input,
+    .agend-select,
+    .agend-textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid rgba(142, 90, 90, 0.18);
+      border-radius: 10px;
+      background: #FFFFFF;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.83rem;
+      color: #2C1A1A;
+      outline: none;
+      transition: border-color 0.22s, box-shadow 0.22s;
+      box-sizing: border-box;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .agend-input:focus,
+    .agend-select:focus,
+    .agend-textarea:focus {
+      border-color: var(--color-gold);
+      box-shadow: 0 0 0 3px rgba(203, 174, 131, 0.22);
+    }
+    .agend-input::placeholder,
+    .agend-textarea::placeholder {
+      color: #BBA8A8;
+    }
+
+    .agend-select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238E5A5A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+
+    .agend-textarea {
+      resize: vertical;
+      min-height: 90px;
+      line-height: 1.55;
+    }
+
+    .agend-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    /* Nota de privacidade */
+    .agend-privacy {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 10px 13px;
+      background: rgba(203, 174, 131, 0.10);
+      border: 1px solid rgba(203, 174, 131, 0.28);
+      border-radius: 9px;
+      font-size: 0.70rem;
+      color: #6D4F4F;
+      line-height: 1.5;
+    }
+    .agend-privacy svg {
+      flex-shrink: 0;
+      margin-top: 1px;
+      color: var(--color-gold-dark);
+    }
+
+    /* Botões de ação */
+    .agend-actions {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .agend-btn-cancel {
+      padding: 13px;
+      border: 1.5px solid rgba(142, 90, 90, 0.22);
+      border-radius: 12px;
+      background: transparent;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-wine);
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .agend-btn-cancel:hover {
+      background: rgba(142, 90, 90, 0.07);
+      border-color: rgba(142, 90, 90, 0.40);
+    }
+
+    .agend-btn-send {
+      position: relative;
+      overflow: hidden;
+      padding: 13px 20px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--color-wine) 0%, var(--color-wine-dark) 100%);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      letter-spacing: 0.04em;
+      box-shadow: 0 4px 18px -4px rgba(109, 61, 61, 0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .agend-btn-send:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px -4px rgba(109, 61, 61, 0.50);
+    }
+    .agend-btn-send:active {
+      transform: translateY(0);
+    }
+    .agend-btn-send::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(203,174,131,0.22) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    /* Mensagem de erro inline */
+    .agend-error {
+      font-size: 0.70rem;
+      color: #C0392B;
+      margin-top: 2px;
+      display: none;
+    }
+    .agend-field.has-error .agend-input,
+    .agend-field.has-error .agend-select,
+    .agend-field.has-error .agend-textarea {
+      border-color: #E57373;
+      box-shadow: 0 0 0 3px rgba(229, 115, 115, 0.15);
+    }
+    .agend-field.has-error .agend-error {
+      display: block;
+    }
+
+    @media (max-width: 420px) {
+      .agend-header, .agend-form { padding-left: 20px; padding-right: 20px; }
+      .agend-row { grid-template-columns: 1fr; }
+      .agend-actions { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -2021,10 +2522,10 @@
         Estética Avançada
       </div>
       <p class="hero-subtitle reveal-text" data-delay-base="0.35">Tratamentos personalizados que valorizam sua beleza natural, com técnica, segurança e acolhimento.</p>
-      <a href="https://wa.me/55SEUNUMEROAQUI?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20personalizada." target="_blank" rel="noopener noreferrer" class="hero-cta-button">
+      <button type="button" class="hero-cta-button" onclick="irParaAgendar()">
         <i data-lucide="calendar-heart"></i>
         Agendar Avaliação
-      </a>
+      </button>
 
 
     </div>
@@ -2032,7 +2533,15 @@
     <!-- Indicador de rolagem -->
     <div class="hero-scroll-cue" aria-hidden="true">
       <span>Role</span>
-      <i data-lucide="chevron-down" style="width: 16px; height: 16px;"></i>
+      <div class="scroll-mouse"></div>
+      <div class="scroll-arrows">
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+          <path d="M1 1l6 6 6-6" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+          <path d="M1 1l6 6 6-6" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
     </div>
   </section>
 
@@ -2125,11 +2634,10 @@
     </section>
 
     <!-- 4. BOTÕES E LINKS DE ATENDIMENTO -->
-    <div class="links-column">
+    <div class="links-column" id="secao-agendar">
 
-      <!-- Link 1: Agendar no WhatsApp -->
-      <!-- TODO: substituir pelo número de WhatsApp real da clínica (formato: 55DDDNUMERO, só dígitos) -->
-      <a href="https://wa.me/55SEUNUMEROAQUI?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20personalizada." target="_blank" rel="noopener noreferrer" class="bio-btn">
+      <!-- Link 1: Agendar — abre o modal de agendamento -->
+      <button type="button" class="bio-btn" onclick="openAgendamento()">
         <div class="btn-left">
           <div class="icon-box">
             <i data-lucide="calendar-heart"></i>
@@ -2142,7 +2650,7 @@
         <div class="btn-arrow">
           <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
         </div>
-      </a>
+      </button>
 
       <!-- Link 2: Menu de Tratamentos -->
       <!-- Corrigido: o arquivo referenciado tinha espaço e "(1)" no nome (sinal de cópia duplicada) e não estava com a URL codificada -->
@@ -2218,7 +2726,9 @@
             <div class="testi-slide is-active" role="group" aria-roledescription="depoimento" aria-label="1 de 3">
               <figure class="testi-card">
                 <div class="testi-author">
-                  <div class="testi-avatar">A</div>
+                  <div class="testi-avatar">
+                    <img src="COLE_AQUI_URL_FOTO_ANA_PAULA" alt="Ana Paula S." onerror="this.style.display='none'">
+                  </div>
                   <div>
                     <div class="testi-name">Ana Paula S.</div>
                     <div class="testi-service">Limpeza de Pele Profunda</div>
@@ -2239,7 +2749,9 @@
             <div class="testi-slide" role="group" aria-roledescription="depoimento" aria-label="2 de 3">
               <figure class="testi-card">
                 <div class="testi-author">
-                  <div class="testi-avatar" style="background: linear-gradient(135deg, #8E5A5A, #CBAE83);">C</div>
+                  <div class="testi-avatar">
+                    <img src="COLE_AQUI_URL_FOTO_CAMILA" alt="Camila R." onerror="this.style.display='none'">
+                  </div>
                   <div>
                     <div class="testi-name">Camila R.</div>
                     <div class="testi-service">Protocolo Rejuvenescimento</div>
@@ -2260,7 +2772,9 @@
             <div class="testi-slide" role="group" aria-roledescription="depoimento" aria-label="3 de 3">
               <figure class="testi-card">
                 <div class="testi-author">
-                  <div class="testi-avatar" style="background: linear-gradient(135deg, #D9A9A4, #8E5A5A);">M</div>
+                  <div class="testi-avatar">
+                    <img src="COLE_AQUI_URL_FOTO_MARIANA" alt="Mariana F." onerror="this.style.display='none'">
+                  </div>
                   <div>
                     <div class="testi-name">Mariana F.</div>
                     <div class="testi-service">Estética Corporal</div>
@@ -2899,5 +3413,259 @@
     });
   </script>
 
+
+  <!-- =====================================================
+       MODAL DE AGENDAMENTO — sem backend, sem banco de dados
+       Compõe uma mensagem formatada e abre direto no WhatsApp
+       ===================================================== -->
+  <div class="agend-overlay" id="agendOverlay" role="dialog" aria-modal="true" aria-labelledby="agendTitle">
+    <div class="agend-modal" id="agendModal">
+
+      <!-- Faixa dourada vem do ::before do .agend-modal -->
+
+      <!-- Estado de sucesso (oculto até envio) -->
+      <div class="agend-success" id="agendSuccess">
+        <div class="agend-success-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <h3>Solicitação enviada!</h3>
+        <p>O WhatsApp da clínica será aberto com seus dados já preenchidos. Aguarde o contato da Roberta Marcella. 🌸</p>
+      </div>
+
+      <div class="agend-header">
+        <div class="agend-header-text">
+          <div class="agend-eyebrow">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Agendamento
+          </div>
+          <h2 class="agend-title" id="agendTitle">Agendar Avaliação<br>Personalizada</h2>
+          <p class="agend-subtitle">Preencha os campos abaixo e enviaremos sua solicitação diretamente pelo WhatsApp.</p>
+        </div>
+        <button class="agend-close" onclick="closeAgendamento()" aria-label="Fechar">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg>
+        </button>
+      </div>
+
+      <form class="agend-form" id="agendForm" novalidate onsubmit="enviarAgendamento(event)">
+
+        <!-- Nome completo -->
+        <div class="agend-field" id="field-nome">
+          <label class="agend-label" for="agend-nome">Nome completo <span>*</span></label>
+          <input class="agend-input" type="text" id="agend-nome" name="nome" placeholder="Seu nome" autocomplete="name">
+          <span class="agend-error" id="err-nome">Por favor, informe seu nome.</span>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="agend-field" id="field-tel">
+          <label class="agend-label" for="agend-tel">WhatsApp <span>*</span></label>
+          <input class="agend-input" type="tel" id="agend-tel" name="tel" placeholder="(00) 00000-0000" autocomplete="tel">
+          <span class="agend-error" id="err-tel">Informe um telefone válido.</span>
+        </div>
+
+        <!-- Procedimento desejado -->
+        <div class="agend-field" id="field-proc">
+          <label class="agend-label" for="agend-proc">Procedimento de interesse <span>*</span></label>
+          <select class="agend-select" id="agend-proc" name="proc">
+            <option value="">Selecione um procedimento…</option>
+            <option value="Avaliação Inicial (não sei ainda)">Avaliação Inicial (não sei ainda)</option>
+            <optgroup label="✦ Facial">
+              <option value="Limpeza de Pele Profunda">Limpeza de Pele Profunda</option>
+              <option value="Protocolo Rejuvenescimento Facial">Protocolo Rejuvenescimento Facial</option>
+              <option value="Peeling Químico">Peeling Químico</option>
+              <option value="Microagulhamento">Microagulhamento</option>
+              <option value="Bioestimuladores">Bioestimuladores</option>
+              <option value="Tratamento para Acne">Tratamento para Acne</option>
+              <option value="Drenagem Linfática Facial">Drenagem Linfática Facial</option>
+            </optgroup>
+            <option value="Outro (especificar nas observações)">Outro (especificar nas observações)</option>
+          </select>
+          <span class="agend-error" id="err-proc">Selecione o procedimento desejado.</span>
+        </div>
+
+        <!-- Observações -->
+        <div class="agend-field">
+          <label class="agend-label" for="agend-obs">Observações / O que você busca alcançar</label>
+          <textarea class="agend-textarea" id="agend-obs" name="obs" placeholder="Conte um pouco sobre o que você gostaria de tratar ou melhorar…" rows="3"></textarea>
+        </div>
+
+        <!-- Aviso de privacidade -->
+        <div class="agend-privacy">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Suas informações são enviadas <strong>apenas para o WhatsApp da clínica</strong> e não ficam armazenadas em nenhum servidor.</span>
+        </div>
+
+        <!-- Ações -->
+        <div class="agend-actions">
+          <button type="button" class="agend-btn-cancel" onclick="closeAgendamento()">Cancelar</button>
+          <button type="submit" class="agend-btn-send">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Enviar pelo WhatsApp
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <script>
+    /* ─── CONFIGURAÇÃO ─────────────────────────────────────────── */
+    const WHATSAPP_NUMERO = '55SEUNUMEROAQUI'; // ← troque pelo número real (só dígitos)
+
+    /* ─── ROLAR PARA SEÇÃO DE AGENDAMENTO ─────────────────────── */
+    function irParaAgendar() {
+      const secao  = document.getElementById('secao-agendar');
+      if (!secao) return;
+
+      // Calcula posição real e rola com offset de 32px
+      const top = secao.getBoundingClientRect().top + window.scrollY - 32;
+      window.scrollTo({ top, behavior: 'smooth' });
+
+      // Destaque no primeiro botão após o scroll chegar (~750ms)
+      const btn = secao.querySelector('.bio-btn');
+      if (!btn) return;
+
+      // Limpa destaque anterior se já existir
+      btn.classList.remove('em-destaque');
+      void btn.offsetWidth; // força reflow para reiniciar animação
+
+      setTimeout(() => {
+        btn.classList.add('em-destaque');
+        // Remove após as 2 repetições da animação (2 × 1.6s = 3.2s)
+        setTimeout(() => btn.classList.remove('em-destaque'), 3400);
+      }, 750);
+    }
+
+    /* ─── MÁSCARA DE TELEFONE ──────────────────────────────────── */
+    document.getElementById('agend-tel').addEventListener('input', function() {
+      let v = this.value.replace(/\D/g, '').slice(0, 11);
+      if (v.length > 10) {
+        v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+      } else if (v.length > 6) {
+        v = v.replace(/^(\d{2})(\d{4,5})(\d{0,4})$/, '($1) $2-$3');
+      } else if (v.length > 2) {
+        v = v.replace(/^(\d{2})(\d+)$/, '($1) $2');
+      } else if (v.length > 0) {
+        v = v.replace(/^(\d+)$/, '($1');
+      }
+      this.value = v;
+    });
+
+    /* ─── CONTADORES ANIMADOS ──────────────────────────────────── */
+    function animarContador(el) {
+      const target  = parseInt(el.dataset.target, 10);
+      const suffix  = el.dataset.suffix || '';
+      const dur     = 1600; // ms
+      const start   = performance.now();
+      function step(now) {
+        const p = Math.min((now - start) / dur, 1);
+        // easeOutExpo
+        const ease = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
+        el.textContent = Math.round(ease * target) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    const statObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          const num = entry.target.querySelector('[data-target]');
+          if (num && !num.dataset.done) {
+            num.dataset.done = '1';
+            setTimeout(() => animarContador(num), 200);
+          }
+          statObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.stat-item').forEach(el => statObs.observe(el));
+
+    /* ─── ABRIR / FECHAR MODAL ─────────────────────────────────── */
+    function openAgendamento() {
+      const overlay = document.getElementById('agendOverlay');
+      // Garante que o formulário aparece (não o estado de sucesso)
+      document.getElementById('agendSuccess').classList.remove('is-visible');
+      document.getElementById('agendForm').style.display = '';
+      document.querySelector('.agend-header').style.display = '';
+      overlay.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => {
+        const primeiro = document.getElementById('agend-nome');
+        if (primeiro) primeiro.focus();
+      }, 360);
+    }
+
+    function closeAgendamento() {
+      const overlay = document.getElementById('agendOverlay');
+      overlay.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('agendOverlay').addEventListener('click', function(e) {
+      if (e.target === this) closeAgendamento();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeAgendamento();
+    });
+
+    /* ─── VALIDAÇÃO ────────────────────────────────────────────── */
+    function validarCampo(id, teste) {
+      const field = document.getElementById('field-' + id);
+      const val   = document.getElementById('agend-' + id).value.trim();
+      const ok    = teste(val);
+      if (field) field.classList.toggle('has-error', !ok);
+      return ok;
+    }
+
+    /* ─── ENVIAR ───────────────────────────────────────────────── */
+    function enviarAgendamento(e) {
+      e.preventDefault();
+
+      const nome = document.getElementById('agend-nome').value.trim();
+      const tel  = document.getElementById('agend-tel').value.trim();
+      const proc = document.getElementById('agend-proc').value;
+      const obs  = document.getElementById('agend-obs').value.trim();
+
+      const okNome = validarCampo('nome', v => v.length >= 2);
+      const okTel  = validarCampo('tel',  v => v.replace(/\D/g,'').length >= 8);
+      const okProc = validarCampo('proc', v => v !== '');
+
+      if (!okNome || !okTel || !okProc) {
+        const erroEl = document.querySelector('.agend-field.has-error');
+        if (erroEl) erroEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      /* ─── Montar mensagem formatada ─── */
+      const linha = '─────────────────────────';
+      let msg = `📋 *SOLICITAÇÃO DE AGENDAMENTO*\n${linha}\n`;
+      msg += `👤 *Nome:* ${nome}\n`;
+      msg += `📱 *WhatsApp:* ${tel}\n`;
+      msg += `💆 *Procedimento:* ${proc}\n`;
+      if (obs) msg += `\n📝 *Observações:*\n${obs}\n`;
+      msg += `${linha}\n✨ _Enviado via site · Roberta Marcella Estética Avançada_`;
+
+      /* ─── Animação de sucesso ─── */
+      document.querySelector('.agend-header').style.display = 'none';
+      document.getElementById('agendForm').style.display = 'none';
+      document.getElementById('agendSuccess').classList.add('is-visible');
+
+      /* Aguarda 1.8s e abre WhatsApp */
+      setTimeout(() => {
+        const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(msg)}`;
+        window.open(url, '_blank', 'noopener,noreferrer');
+        setTimeout(() => {
+          closeAgendamento();
+          document.getElementById('agendForm').reset();
+          document.querySelectorAll('.agend-field.has-error').forEach(el => el.classList.remove('has-error'));
+        }, 400);
+      }, 1800);
+    }
+  </script>
 </body>
 </html>
