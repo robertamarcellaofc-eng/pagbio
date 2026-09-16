@@ -3515,99 +3515,68 @@
 
     /* ─── ROLAR PARA SEÇÃO DE AGENDAMENTO ─────────────────────── */
     function irParaAgendar() {
-      const secao  = document.getElementById('secao-agendar');
+      const secao = document.getElementById('secao-agendar');
       if (!secao) return;
-
-      // Calcula posição real e rola com offset de 32px
       const top = secao.getBoundingClientRect().top + window.scrollY - 32;
       window.scrollTo({ top, behavior: 'smooth' });
-
-      // Destaque no primeiro botão após o scroll chegar (~750ms)
       const btn = secao.querySelector('.bio-btn');
       if (!btn) return;
-
-      // Limpa destaque anterior se já existir
       btn.classList.remove('em-destaque');
-      void btn.offsetWidth; // força reflow para reiniciar animação
-
+      void btn.offsetWidth;
       setTimeout(() => {
         btn.classList.add('em-destaque');
-        // Remove após as 2 repetições da animação (2 × 1.6s = 3.2s)
         setTimeout(() => btn.classList.remove('em-destaque'), 3400);
       }, 750);
     }
 
     /* ─── MÁSCARA DE TELEFONE ──────────────────────────────────── */
-    document.getElementById('agend-tel').addEventListener('input', function() {
-      let v = this.value.replace(/\D/g, '').slice(0, 11);
-      if (v.length > 10) {
-        v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
-      } else if (v.length > 6) {
-        v = v.replace(/^(\d{2})(\d{4,5})(\d{0,4})$/, '($1) $2-$3');
-      } else if (v.length > 2) {
-        v = v.replace(/^(\d{2})(\d+)$/, '($1) $2');
-      } else if (v.length > 0) {
-        v = v.replace(/^(\d+)$/, '($1');
-      }
-      this.value = v;
-    });
-
-    /* ─── CONTADORES ANIMADOS ──────────────────────────────────── */
-    function animarContador(el) {
-      const target  = parseInt(el.dataset.target, 10);
-      const suffix  = el.dataset.suffix || '';
-      const dur     = 1600; // ms
-      const start   = performance.now();
-      function step(now) {
-        const p = Math.min((now - start) / dur, 1);
-        // easeOutExpo
-        const ease = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);
-        el.textContent = Math.round(ease * target) + suffix;
-        if (p < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-
-    const statObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          const num = entry.target.querySelector('[data-target]');
-          if (num && !num.dataset.done) {
-            num.dataset.done = '1';
-            setTimeout(() => animarContador(num), 200);
-          }
-          statObs.unobserve(entry.target);
-        }
+    var telInput = document.getElementById('agend-tel');
+    if (telInput) {
+      telInput.addEventListener('input', function() {
+        var v = this.value.replace(/\D/g, '').slice(0, 11);
+        if (v.length > 10)      v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
+        else if (v.length > 6)  v = v.replace(/^(\d{2})(\d{4,5})(\d{0,4})$/, '($1) $2-$3');
+        else if (v.length > 2)  v = v.replace(/^(\d{2})(\d+)$/, '($1) $2');
+        else if (v.length > 0)  v = '(' + v;
+        this.value = v;
       });
-    }, { threshold: 0.3 });
-
-    document.querySelectorAll('.stat-item').forEach(el => statObs.observe(el));
+    }
 
     /* ─── ABRIR / FECHAR MODAL ─────────────────────────────────── */
     function openAgendamento() {
-      const overlay = document.getElementById('agendOverlay');
-      // Garante que o formulário aparece (não o estado de sucesso)
-      document.getElementById('agendSuccess').classList.remove('is-visible');
-      document.getElementById('agendForm').style.display = '';
-      document.querySelector('.agend-header').style.display = '';
+      var overlay  = document.getElementById('agendOverlay');
+      var success  = document.getElementById('agendSuccess');
+      var form     = document.getElementById('agendForm');
+      var header   = document.querySelector('.agend-header');
+      if (!overlay) return;
+
+      // Restaura estado do formulário
+      if (success) { success.style.display = 'none'; success.classList.remove('is-visible'); }
+      if (form)    form.style.display = '';
+      if (header)  header.style.display = '';
+
       overlay.classList.add('is-open');
       document.body.style.overflow = 'hidden';
-      setTimeout(() => {
-        const primeiro = document.getElementById('agend-nome');
+
+      setTimeout(function() {
+        var primeiro = document.getElementById('agend-nome');
         if (primeiro) primeiro.focus();
-      }, 360);
+      }, 350);
     }
 
     function closeAgendamento() {
-      const overlay = document.getElementById('agendOverlay');
+      var overlay = document.getElementById('agendOverlay');
+      if (!overlay) return;
       overlay.classList.remove('is-open');
       document.body.style.overflow = '';
     }
 
-    document.getElementById('agendOverlay').addEventListener('click', function(e) {
-      if (e.target === this) closeAgendamento();
-    });
+    var overlay = document.getElementById('agendOverlay');
+    if (overlay) {
+      overlay.addEventListener('click', function(e) {
+        if (e.target === this) closeAgendamento();
+      });
+    }
 
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeAgendamento();
@@ -3615,9 +3584,11 @@
 
     /* ─── VALIDAÇÃO ────────────────────────────────────────────── */
     function validarCampo(id, teste) {
-      const field = document.getElementById('field-' + id);
-      const val   = document.getElementById('agend-' + id).value.trim();
-      const ok    = teste(val);
+      var field = document.getElementById('field-' + id);
+      var el    = document.getElementById('agend-' + id);
+      if (!el) return true;
+      var val = el.value.trim();
+      var ok  = teste(val);
       if (field) field.classList.toggle('has-error', !ok);
       return ok;
     }
@@ -3626,45 +3597,56 @@
     function enviarAgendamento(e) {
       e.preventDefault();
 
-      const nome = document.getElementById('agend-nome').value.trim();
-      const tel  = document.getElementById('agend-tel').value.trim();
-      const proc = document.getElementById('agend-proc').value;
-      const obs  = document.getElementById('agend-obs').value.trim();
+      var nome = document.getElementById('agend-nome').value.trim();
+      var tel  = document.getElementById('agend-tel').value.trim();
+      var proc = document.getElementById('agend-proc').value;
+      var obs  = (document.getElementById('agend-obs') || {}).value || '';
+      obs = obs.trim();
 
-      const okNome = validarCampo('nome', v => v.length >= 2);
-      const okTel  = validarCampo('tel',  v => v.replace(/\D/g,'').length >= 8);
-      const okProc = validarCampo('proc', v => v !== '');
+      var okNome = validarCampo('nome', function(v){ return v.length >= 2; });
+      var okTel  = validarCampo('tel',  function(v){ return v.replace(/\D/g,'').length >= 8; });
+      var okProc = validarCampo('proc', function(v){ return v !== ''; });
 
       if (!okNome || !okTel || !okProc) {
-        const erroEl = document.querySelector('.agend-field.has-error');
+        var erroEl = document.querySelector('.agend-field.has-error');
         if (erroEl) erroEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
 
       /* ─── Montar mensagem formatada ─── */
-      const linha = '─────────────────────────';
-      let msg = `📋 *SOLICITAÇÃO DE AGENDAMENTO*\n${linha}\n`;
-      msg += `👤 *Nome:* ${nome}\n`;
-      msg += `📱 *WhatsApp:* ${tel}\n`;
-      msg += `💆 *Procedimento:* ${proc}\n`;
-      if (obs) msg += `\n📝 *Observações:*\n${obs}\n`;
-      msg += `${linha}\n✨ _Enviado via site · Roberta Marcella Estética Avançada_`;
+      var linha = '─────────────────────────';
+      var msg = '📋 *SOLICITAÇÃO DE AGENDAMENTO*\n' + linha + '\n';
+      msg += '👤 *Nome:* ' + nome + '\n';
+      msg += '📱 *WhatsApp:* ' + tel + '\n';
+      msg += '💆 *Procedimento:* ' + proc + '\n';
+      if (obs) msg += '\n📝 *Observações:*\n' + obs + '\n';
+      msg += linha + '\n✨ _Enviado via site · Roberta Marcella Estética Avançada_';
 
-      /* ─── Animação de sucesso ─── */
-      document.querySelector('.agend-header').style.display = 'none';
-      document.getElementById('agendForm').style.display = 'none';
-      document.getElementById('agendSuccess').classList.add('is-visible');
+      /* ─── Abre WhatsApp IMEDIATAMENTE (resposta direta ao clique) ─── */
+      var url = 'https://wa.me/' + WHATSAPP_NUMERO + '?text=' + encodeURIComponent(msg);
+      var link = document.createElement('a');
+      link.href = url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
-      /* Aguarda 1.8s e abre WhatsApp */
-      setTimeout(() => {
-        const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(msg)}`;
-        window.open(url, '_blank', 'noopener,noreferrer');
-        setTimeout(() => {
-          closeAgendamento();
-          document.getElementById('agendForm').reset();
-          document.querySelectorAll('.agend-field.has-error').forEach(el => el.classList.remove('has-error'));
-        }, 400);
-      }, 1800);
+      /* ─── Mostra animação de sucesso após abrir WhatsApp ─── */
+      var header  = document.querySelector('.agend-header');
+      var form    = document.getElementById('agendForm');
+      var success = document.getElementById('agendSuccess');
+      if (header)  header.style.display = 'none';
+      if (form)    form.style.display = 'none';
+      if (success) { success.style.display = 'flex'; success.classList.add('is-visible'); }
+
+      // Fecha e limpa o modal após 2.5s
+      setTimeout(function() {
+        closeAgendamento();
+        var f = document.getElementById('agendForm');
+        if (f) f.reset();
+        document.querySelectorAll('.agend-field.has-error').forEach(function(el){ el.classList.remove('has-error'); });
+      }, 2500);
     }
   </script>
 </body>
