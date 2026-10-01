@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dra. Roberta Marcella | Estética Avançada</title>
+  <meta name="description"
+    content="Agendamento de consultas, tratamentos corporais e faciais, protocolos exclusivos e contato direto com Dra. Roberta Marcella Estética Avançada.">
+  
+  <!-- ===================================================================
+       PAINEL DE CONFIGURAÇÕES RÁPIDAS (DRA. ROBERTA MARCELLA)
+       Altere aqui o link do vídeo, WhatsApp e títulos da aba do navegador!
+       =================================================================== -->
+  <script>
+    window.CONFIG_ROBERTA = {
+      // 1. Link do vídeo do YouTube (cole aqui o link completo ou encurtado):
+      videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      
+      // 2. Número de WhatsApp oficial para dúvidas e agendamentos:
+      whatsappNumero: '5582993535363',
+      
+      // 3. Títulos dinâmicos que se alternam na aba do navegador:
+      titulosAba: [
+        'Dra. Roberta Marcella | Estética Avançada',
+        '✨ Olá! Seja muito bem-vinda(o)',
+        'Dra. Roberta Marcella | Estética Avançada',
+        '💖 Cuidado que valoriza sua beleza'
+      ],
+      tempoTrocaTituloMs: 3400
+    };
+  </script>
+
+  <!-- Favicon e Ícone Oficial da aba puxados diretamente da pasta assets/ -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" id="siteFavicon">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  
+  <!-- Remove no-js imediatamente para transições visuais suaves -->
+  <script>document.documentElement.classList.remove('no-js');</script>
+
+  <!-- Fontes de Luxo: Poppins & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+  </noscript>
+
+  <!-- Folha de Estilos Centralizada (CSS) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- Barra animada de progresso no topo do header (scroll indicator) -->
+  <div class="header-scroll-progress-bar" id="headerProgressBar"></div>
+
+  <!-- =========================================================================
+       SEÇÃO HERO — BANNER PRINCIPAL (FOTO À DIREITA + DEGRADÊ)
+       ENDEREÇO DAS CONFIGURAÇÕES NO CSS (style.css no bloco :root):
+       - Largura/Altura do container geral (.hero-content): --hero-content-largura-*
+       - Largura/Altura do container do título (.profile-title): --nome-largura-*
+       - Tamanho e altura da fonte «Dra. Roberta»: --nome-prefix-size-*
+       - Tamanho e altura da fonte «Marcella»: --nome-main-size-*
+       - Largura/Altura/Fonte do subtítulo (.hero-subtitle): --hero-subtitulo-*
+       - Cores em HEX: --cor-fundo-hero, --color-gold, --color-wine, etc.
+       ========================================================================= -->
+  <section class="hero-section">
+    <!-- Camada 1: a foto de fundo cobrindo a seção inteira (definida em --hero-img-* no style.css) -->
+    <div class="hero-bg" aria-hidden="true"></div>
+    <!-- Camada 2: degradê lateral especificado (escuro à esquerda, nítido à direita — ajustável em :root) -->
+    <div class="hero-scrim" aria-hidden="true"></div>
+
+    <!-- Camada 3: Container Principal do Texto (largura controlada por --hero-content-largura-*) -->
+    <div class="hero-content">
+      <!-- Avaliação em estrelas e prestígio -->
+      <div class="hero-stars-row reveal" style="transition-delay: 0.12s;">
+        <div class="hero-stars-icons">
+          <i data-lucide="star" fill="currentColor"></i>
+          <i data-lucide="star" fill="currentColor"></i>
+          <i data-lucide="star" fill="currentColor"></i>
+          <i data-lucide="star" fill="currentColor"></i>
+          <i data-lucide="star" fill="currentColor"></i>
+        </div>
+        <span class="hero-stars-rating">4.9</span>
+      </div>
+
+      <!-- TÍTULO: Nome Dra. Roberta Marcella
+           (Largura, alturas e tamanhos de fonte controlados nas variáveis --nome-* no style.css) -->
+      <h1 class="profile-title reveal" style="transition-delay: 0.18s;">
+        <span class="title-prefix">Dra. Roberta</span>
+        <span class="title-main">Marcella</span>
+      </h1>
+
+      <!-- SUBTÍTULO: Texto de acolhimento e posicionamento
+           (Largura, fonte e altura controladas em --hero-subtitulo-* no style.css) -->
+      <p class="hero-subtitle reveal-text" data-delay-base="0.25">Tratamentos personalizados que valorizam sua beleza
+        natural, com técnica, segurança e acolhimento.</p>
+
+      <!-- Botão de agendamento prioritário -->
+      <button type="button" class="hero-cta-button in-view" onclick="irParaAgendar()">
+        <i data-lucide="calendar-heart"></i>
+        Agendar Avaliação
+      </button>
+
+      <!-- Selos de prestígio e confiança -->
+      <div class="hero-trust reveal" style="transition-delay: 0.42s;">
+        <span class="hero-trust-item">
+          <i data-lucide="sparkles"></i>
+          Estética Avançada
+        </span>
+        <span class="hero-trust-item">
+          <i data-lucide="shield-check"></i>
+          Protocolos Exclusivos
+        </span>
+        <span class="hero-trust-item">
+          <i data-lucide="heart"></i>
+          Atendimento Humanizado
+        </span>
+      </div>
+    </div>
+
+    <!-- Indicador de rolagem -->
+    <div class="hero-scroll-cue" aria-hidden="true">
+      <span>Role</span>
+      <div class="scroll-mouse"></div>
+      <div class="scroll-arrows">
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+          <path d="M1 1l6 6 6-6" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+        <svg width="14" height="8" viewBox="0 0 14 8" fill="none">
+          <path d="M1 1l6 6 6-6" stroke="rgba(255,255,255,0.85)" stroke-width="1.8" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       [SEÇÃO 2] MARQUEE INFINITO — FAIXA HORIZONTAL DE DESTAQUES
+       • LOCALIZAÇÃO NO CSS: style.css (linhas ~540 a ~600)
+       • CLASSES: .marquee-strip (container), .marquee-track (trilho), .marquee-item (texto)
+       • O QUE ALTERAR AQUI: textos da faixa que passam em loop contínuo
+       ========================================================================= -->
+  <section class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item">Dra. Roberta Marcella <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Estética Avançada <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Cuidado que Valoriza sua Beleza <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Protocolos Exclusivos <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Dra. Roberta Marcella <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Beleza com Técnica & Acolhimento <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Estética Avançada <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Resultados que Transformam <span class="sparkle-bullet">◆</span></span>
+      <!-- Duplicado para loop infinito fluído -->
+      <span class="marquee-item">Dra. Roberta Marcella <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Estética Avançada <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Cuidado que Valoriza sua Beleza <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Protocolos Exclusivos <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Dra. Roberta Marcella <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Beleza com Técnica & Acolhimento <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Estética Avançada <span class="sparkle-bullet">◆</span></span>
+      <span class="marquee-item">Resultados que Transformam <span class="sparkle-bullet">◆</span></span>
+    </div>
+  </section>
+
+  <div class="page-content">
+
+    <!-- Conteúdo Central da Bio -->
+    <main class="bio-card-wrapper">
+
+      <!-- =====================================================================
+           [SEÇÃO 3] PLAYER DE VÍDEO CINEMA — APRESENTAÇÃO DA CLÍNICA
+           • LOCALIZAÇÃO NO CSS: style.css (linhas ~610 a ~720 e ~3205 a ~3225)
+           • CONFIGURAÇÃO DO LINK DO YOUTUBE: script.js no objeto VIDEO_CONFIG
+           • CLASSES: .video-card-section, .video-player-frame, .video-cover-layer
+           • O QUE ALTERAR AQUI: thumbnail em #videoCoverImg, tempo em .video-foot-meta
+           ===================================================================== -->
+      <section class="video-card-section reveal">
+        <div class="video-player-frame">
+          <div class="video-ratio-box" id="videoRatioBox">
+
+            <!-- Capa com Play Button — acessível via mouse e teclado (Enter/Espaço) -->
+            <div class="video-cover-layer" id="videoCoverLayer" role="button" tabindex="0"
+              aria-label="Reproduzir vídeo de apresentação" onclick="playVideo()"
+              onkeydown="handleVideoCoverKeydown(event)">
+              <img id="videoCoverImg"
+                src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=1200&h=1000&auto=format&fit=crop"
+                alt="Ambiente Dra. Roberta Marcella Estética Avançada"
+                style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+              <div class="video-tint"></div>
+
+              <div class="badge-video-tag">
+                EXPERIÊNCIA ACOLHEDORA
+              </div>
+
+              <span class="play-btn-circle" aria-hidden="true">
+                <i data-lucide="play"></i>
+              </span>
+            </div>
+
+            <!-- YouTube IFrame Player Mount -->
+            <div id="youtubePlayerMount"></div>
+
+            <!-- Controles customizados (play/pausa e mudo/áudio) -->
+            <div class="video-controls" id="videoControls">
+              <button type="button" class="video-ctrl-btn" id="btnPlayPause" aria-label="Pausar vídeo"
+                onclick="toggleVideoPlayPause(event)">
+                <i data-lucide="pause"></i>
+              </button>
+              <button type="button" class="video-ctrl-btn" id="btnMute" aria-label="Silenciar vídeo"
+                onclick="toggleVideoMute(event)">
+                <i data-lucide="volume-2"></i>
+              </button>
+            </div>
+
+          </div>
+
+          <div class="video-foot-meta">
+            <span><i data-lucide="play-circle" style="width: 14px; height: 14px; color: var(--color-wine);"></i> Conheça
+              nosso espaço e atendimento</span>
+            <span>01:30 min</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           [SEÇÃO 4] BOTÕES E CARDS DE ATENDIMENTO — BIO LINKS
+           • LOCALIZAÇÃO NO CSS: style.css (linhas ~800 a ~1050 e ~3495 a ~3815)
+           • CLASSES: .links-column, .bio-hero-card, .bio-hero-title, .bio-hero-desc
+           • O QUE ALTERAR AQUI: textos dos cards, fotos em <picture>, links ou ação
+           ===================================================================== -->
+      <div class="links-column" id="secao-agendar">
+
+        <!-- ─── CARD 1: Agendar Avaliação Personalizada (Abre Modal de Agendamento) ───
+             • Título: <h3 class="bio-hero-title">
+             • Descrição: <p class="bio-hero-desc">
+             • Imagem: <picture> com fotos desktop/tablet/mobile
+             • Ação: onclick="openAgendamento()"
+             ─────────────────────────────────────────────────────────────────────── -->
+        <button type="button" class="bio-hero-card reveal" onclick="openAgendamento()">
+          <div class="bio-hero-card-surface" aria-hidden="true">
+            <div class="bio-hero-card-bar"></div>
+            <div class="bio-hero-card-glow"></div>
+          </div>
+          <div class="bio-hero-card-content">
+            <span class="bio-hero-badge"><i data-lucide="sparkles"></i> Avaliação Exclusiva</span>
+            <h3 class="bio-hero-title">Agendar Avaliação Personalizada</h3>
+            <p class="bio-hero-desc">Atendimento sob medida com hora marcada e diagnóstico facial completo</p>
+            <div class="bio-hero-action">
+              <span>Agendar Agora</span>
+              <i data-lucide="arrow-right"></i>
+            </div>
+          </div>
+          <div class="bio-hero-card-media" aria-hidden="true">
+            <picture class="bio-hero-picture">
+              <source media="(min-width: 1024px)" srcset="assets/btn-avaliacao-desktop.jpg">
+              <source media="(min-width: 481px)" srcset="assets/btn-avaliacao-tablet.jpg">
+              <img src="assets/btn-avaliacao-mobile.jpg" alt="Dra. Roberta Marcella" class="bio-hero-popout-img">
+            </picture>
+          </div>
+        </button>
+
+        <!-- ─── CARD 2: Menu de Procedimentos (Link para Landing Page) ─────────────
+             • Título: <h3 class="bio-hero-title">
+             • Descrição: <p class="bio-hero-desc">
+             • Destino: href="roberta-marcela-estetica.html#tratamentos"
+             ─────────────────────────────────────────────────────────────────────── -->
+        <a href="roberta-marcela-estetica.html#tratamentos" target="_blank" rel="noopener noreferrer" class="bio-hero-card reveal">
+          <div class="bio-hero-card-surface" aria-hidden="true">
+            <div class="bio-hero-card-bar"></div>
+            <div class="bio-hero-card-glow"></div>
+          </div>
+          <div class="bio-hero-card-content">
+            <span class="bio-hero-badge"><i data-lucide="sparkles"></i> Protocolos Clínicos</span>
+            <h3 class="bio-hero-title">Menu de Procedimentos</h3>
+            <p class="bio-hero-desc">Limpeza de pele profunda, rejuvenescimento e estética corporal</p>
+            <div class="bio-hero-action">
+              <span>Ver Procedimentos</span>
+              <i data-lucide="arrow-right"></i>
+            </div>
+          </div>
+          <div class="bio-hero-card-media" aria-hidden="true">
+            <picture class="bio-hero-picture">
+              <source media="(min-width: 1024px)" srcset="assets/btn-procedimentos-desktop.jpg">
+              <source media="(min-width: 481px)" srcset="assets/btn-procedimentos-tablet.jpg">
+              <img src="assets/btn-procedimentos-mobile.jpg" alt="Procedimentos Estéticos" class="bio-hero-popout-img">
+            </picture>
+          </div>
+        </a>
+
+        <!-- ─── CARD 3: Conheça Nossa História & Espaço (Apresentação) ───────────
+             • Título: <h3 class="bio-hero-title">
+             • Descrição: <p class="bio-hero-desc">
+             • Destino: href="roberta-marcela-estetica.html"
+             ─────────────────────────────────────────────────────────────────────── -->
+        <a href="roberta-marcela-estetica.html" target="_blank" rel="noopener noreferrer" class="bio-hero-card reveal">
+          <div class="bio-hero-card-surface" aria-hidden="true">
+            <div class="bio-hero-card-bar"></div>
+            <div class="bio-hero-card-glow"></div>
+          </div>
+          <div class="bio-hero-card-content">
+            <span class="bio-hero-badge"><i data-lucide="sparkles"></i> Atendimento Humanizado</span>
+            <h3 class="bio-hero-title">Conheça Nossa História & Espaço</h3>
+            <p class="bio-hero-desc">Ambiente acolhedor projetado para seu bem-estar, conforto e segurança</p>
+            <div class="bio-hero-action">
+              <span>Conhecer Espaço</span>
+              <i data-lucide="arrow-right"></i>
+            </div>
+          </div>
+          <div class="bio-hero-card-media" aria-hidden="true">
+            <picture class="bio-hero-picture">
+              <source media="(min-width: 1024px)" srcset="assets/btn-espaco-desktop.jpg">
+              <source media="(min-width: 481px)" srcset="assets/btn-espaco-tablet.jpg">
+              <img src="assets/btn-espaco-mobile.jpg" alt="Espaço da Clínica" class="bio-hero-popout-img">
+            </picture>
+          </div>
+        </a>
+
+        <!-- ─── CARD 4: Como Chegar ao Consultório (Google Maps) ─────────────────
+             • Título: <h3 class="bio-hero-title">
+             • Descrição: <p class="bio-hero-desc">
+             • Destino: link de pesquisa do Google Maps
+             ─────────────────────────────────────────────────────────────────────── -->
+        <a href="https://www.google.com/maps/search/?api=1&query=Roberta+Marcella+Est%C3%A9tica+Avan%C3%A7ada"
+          target="_blank" rel="noopener noreferrer" class="bio-hero-card reveal">
+          <div class="bio-hero-card-surface" aria-hidden="true">
+            <div class="bio-hero-card-bar"></div>
+            <div class="bio-hero-card-glow"></div>
+          </div>
+          <div class="bio-hero-card-content">
+            <span class="bio-hero-badge"><i data-lucide="sparkles"></i> Fácil Acesso</span>
+            <h3 class="bio-hero-title">Como Chegar ao Consultório</h3>
+            <p class="bio-hero-desc">Localização nobre, segura e com estacionamento privativo</p>
+            <div class="bio-hero-action">
+              <span>Abrir Localização</span>
+              <i data-lucide="arrow-right"></i>
+            </div>
+          </div>
+          <div class="bio-hero-card-media" aria-hidden="true">
+            <picture class="bio-hero-picture">
+              <source media="(min-width: 1024px)" srcset="assets/btn-localizacao-desktop.jpg">
+              <source media="(min-width: 481px)" srcset="assets/btn-localizacao-tablet.jpg">
+              <img src="assets/btn-localizacao-mobile.jpg" alt="Localização do Consultório" class="bio-hero-popout-img">
+            </picture>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- =====================================================================
+           [SEÇÃO 5] QUEM SÃO NOSSOS CLIENTES — DEPOIMENTOS DE CLIENTES
+           • LOCALIZAÇÃO NO CSS: style.css (linhas ~1350 a ~1650)
+           • CLASSES: .testimonials-section, .testi-carousel, .testi-card, .testi-slide
+           • O QUE ALTERAR AQUI: fotos, nomes, serviços realizados e depoimentos das clientes
+           ===================================================================== -->
+      <section class="testimonials-section">
+        <div class="section-label reveal-text">
+          <i data-lucide="star" style="width: 12px; height: 12px;"></i>
+          O que nossas clientes dizem
+        </div>
+
+        <!-- Carrossel de Depoimentos em Pilha -->
+        <div class="testi-carousel reveal" role="region" aria-label="Depoimentos de clientes">
+          <div class="testi-stage">
+            <div class="testi-viewport">
+              <div class="testi-track">
+
+                <!-- ─── DEPOIMENTO 1: Ana Paula S. ───────────────────────────────
+                     • Nome: <div class="testi-name">
+                     • Procedimento: <div class="testi-service">
+                     • Texto: <blockquote class="testi-text">
+                     • Avatar: <img src="assets/avatar-ana-paula.jpg">
+                     ───────────────────────────────────────────────────────────── -->
+                <div class="testi-slide is-active" role="group" aria-roledescription="depoimento" aria-label="1 de 3">
+                  <figure class="testi-card">
+                    <div class="testi-author">
+                      <div class="testi-avatar">
+                        <img src="assets/avatar-ana-paula.jpg" alt="Ana Paula S." onerror="this.style.display='none'">
+                      </div>
+                      <div>
+                        <div class="testi-name">Ana Paula S.</div>
+                        <div class="testi-service">Limpeza de Pele Profunda</div>
+                      </div>
+                      <div class="testi-badge-verified">
+                        <i data-lucide="check" style="width: 10px; height: 10px;"></i>
+                        Verificado
+                      </div>
+                    </div>
+                    <blockquote class="testi-text">"Minha pele nunca esteve tão bonita! O atendimento da Roberta é
+                      incrível, super atencioso e personalizado. Me senti acolhida do início ao fim."</blockquote>
+                    <div class="testi-stars" aria-label="5 de 5 estrelas">
+                      <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span
+                        aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                    </div>
+                  </figure>
+                </div>
+
+                <!-- ─── DEPOIMENTO 2: Camila R. ─────────────────────────────────
+                     • Nome: <div class="testi-name">
+                     • Procedimento: <div class="testi-service">
+                     • Texto: <blockquote class="testi-text">
+                     • Avatar: <img src="assets/avatar-camila.jpg">
+                     ───────────────────────────────────────────────────────────── -->
+                <div class="testi-slide" role="group" aria-roledescription="depoimento" aria-label="2 de 3">
+                  <figure class="testi-card">
+                    <div class="testi-author">
+                      <div class="testi-avatar">
+                        <img src="assets/avatar-camila.jpg" alt="Camila R." onerror="this.style.display='none'">
+                      </div>
+                      <div>
+                        <div class="testi-name">Camila R.</div>
+                        <div class="testi-service">Protocolo Rejuvenescimento</div>
+                      </div>
+                      <div class="testi-badge-verified">
+                        <i data-lucide="check" style="width: 10px; height: 10px;"></i>
+                        Verificado
+                      </div>
+                    </div>
+                    <blockquote class="testi-text">"Fiz o protocolo de rejuvenescimento e os resultados superaram todas
+                      as minhas expectativas! Profissional extremamente capacitada e dedicada."</blockquote>
+                    <div class="testi-stars" aria-label="5 de 5 estrelas">
+                      <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span
+                        aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                    </div>
+                  </figure>
+                </div>
+
+                <!-- ─── DEPOIMENTO 3: Mariana F. ────────────────────────────────
+                     • Nome: <div class="testi-name">
+                     • Procedimento: <div class="testi-service">
+                     • Texto: <blockquote class="testi-text">
+                     • Avatar: <img src="assets/avatar-mariana.jpg">
+                     ───────────────────────────────────────────────────────────── -->
+                <div class="testi-slide" role="group" aria-roledescription="depoimento" aria-label="3 de 3">
+                  <figure class="testi-card">
+                    <div class="testi-author">
+                      <div class="testi-avatar">
+                        <img src="assets/avatar-mariana.jpg" alt="Mariana F." onerror="this.style.display='none'">
+                      </div>
+                      <div>
+                        <div class="testi-name">Mariana F.</div>
+                        <div class="testi-service">Estética Corporal</div>
+                      </div>
+                      <div class="testi-badge-verified">
+                        <i data-lucide="check" style="width: 10px; height: 10px;"></i>
+                        Verificado
+                      </div>
+                    </div>
+                    <blockquote class="testi-text">"Ambiente lindo, cheiroso e aconchegante. A Roberta explica cada
+                      etapa do tratamento com clareza. Com certeza voltarei e recomendo demais!"</blockquote>
+                    <div class="testi-stars" aria-label="5 de 5 estrelas">
+                      <span aria-hidden="true">★</span><span aria-hidden="true">★</span><span
+                        aria-hidden="true">★</span><span aria-hidden="true">★</span><span aria-hidden="true">★</span>
+                    </div>
+                  </figure>
+                </div>
+
+              </div>
+            </div>
+          </div><!-- /.testi-stage -->
+          <div class="testi-dots" role="tablist" aria-label="Escolher depoimento"></div>
+
+          <p class="testi-hint">Toque no card para ver o próximo</p>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+         DOBRA 6 — FAQ: QUESTÕES / PERGUNTAS FREQUENTES
+         ONDE ALTERAR ESTILOS NO CSS (style.css linha ~120 a ~155):
+         - Largura do container geral: --faq-container-largura-desktop / --faq-container-largura-mobile
+         - Largura/Altura do card da questão: --faq-card-largura / --faq-card-altura-min
+         - Cores em HEX do card (fechado/aberto): --faq-card-fundo, --faq-card-borda
+         - Tamanho da fonte e cor da pergunta: --faq-pergunta-fonte-*, --faq-pergunta-cor
+         - Tamanho da fonte e cor da resposta: --faq-resposta-fonte-*, --faq-resposta-cor
+         ===================================================================== -->
+      <section class="faq-section">
+        <div class="section-label reveal-text">
+          <i data-lucide="message-circle-question" style="width: 12px; height: 12px;"></i>
+          Perguntas Frequentes
+        </div>
+
+        <div class="faq-list" id="faqList">
+
+          <!-- ─── QUESTÃO 01 ──────────────────────────────────────────────────
+               • Pergunta: Altere o texto dentro de <span class="faq-q-text">
+               • Resposta: Altere o texto dentro de <div class="faq-answer-inner">
+               • Estilos e Cores em HEX: configurados em :root no style.css
+               ────────────────────────────────────────────────────────────────── -->
+          <div class="faq-item" id="faq-1">
+            <button class="faq-question" onclick="toggleFaq('faq-1')" aria-expanded="false">
+              <span class="faq-num">01</span>
+              <span class="faq-q-text">Como faço para agendar minha avaliação?</span>
+              <div class="faq-chevron" aria-hidden="true"><span class="faq-chevron-icon"></span></div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-wrap">
+                <div class="faq-answer-inner">
+                  <p>O agendamento é feito de forma <span class="faq-highlight">rápida e descomplicada pelo
+                      WhatsApp</span>. Nossa equipe responde em poucos minutos e confirma o horário ideal para você.</p>
+                  <ul class="faq-bullets">
+                    <li>Escolha o melhor dia e horário para você</li>
+                    <li>Receba a confirmação e o endereço completo</li>
+                    <li>A avaliação inicial é <strong>gratuita e sem compromisso</strong></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ─── QUESTÃO 02 ──────────────────────────────────────────────────
+               • Pergunta: Altere o texto dentro de <span class="faq-q-text">
+               • Resposta: Altere o texto dentro de <div class="faq-answer-inner">
+               • Estilos e Cores em HEX: configurados em :root no style.css
+               ────────────────────────────────────────────────────────────────── -->
+          <div class="faq-item" id="faq-2">
+            <button class="faq-question" onclick="toggleFaq('faq-2')" aria-expanded="false">
+              <span class="faq-num">02</span>
+              <span class="faq-q-text">Quais tratamentos são oferecidos?</span>
+              <div class="faq-chevron" aria-hidden="true"><span class="faq-chevron-icon"></span></div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-wrap">
+                <div class="faq-answer-inner">
+                  <p>Trabalhamos com <span class="faq-highlight">protocolos exclusivos e personalizados</span> para cada
+                    cliente, em duas grandes áreas:</p>
+                  <ul class="faq-bullets">
+                    <li><strong>Facial:</strong> limpeza de pele profunda, rejuvenescimento, hidratação intensiva,
+                      microagulhamento e harmonização</li>
+                    <li><strong>Corporal:</strong> drenagem linfática, modelagem corporal, redução de medidas,
+                      tratamento de celulite e flacidez</li>
+                    <li>Todos os protocolos são definidos após avaliação individual detalhada</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ─── QUESTÃO 03 ──────────────────────────────────────────────────
+               • Pergunta: Altere o texto dentro de <span class="faq-q-text">
+               • Resposta: Altere o texto dentro de <div class="faq-answer-inner">
+               • Estilos e Cores em HEX: configurados em :root no style.css
+               ────────────────────────────────────────────────────────────────── -->
+          <div class="faq-item" id="faq-3">
+            <button class="faq-question" onclick="toggleFaq('faq-3')" aria-expanded="false">
+              <span class="faq-num">03</span>
+              <span class="faq-q-text">Quanto tempo dura cada sessão?</span>
+              <div class="faq-chevron" aria-hidden="true"><span class="faq-chevron-icon"></span></div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-wrap">
+                <div class="faq-answer-inner">
+                  <p>O tempo varia conforme o protocolo. Em geral:</p>
+                  <ul class="faq-bullets">
+                    <li><strong>Faciais:</strong> entre 60 e 90 minutos</li>
+                    <li><strong>Corporais:</strong> entre 60 e 120 minutos</li>
+                    <li><strong>Avaliação inicial:</strong> aproximadamente 30 minutos</li>
+                  </ul>
+                  <p style="margin-top:10px;">Na consulta inicial você receberá um cronograma detalhado com frequência e
+                    quantidade de sessões recomendadas para o seu caso.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ─── QUESTÃO 04 ──────────────────────────────────────────────────
+               • Pergunta: Altere o texto dentro de <span class="faq-q-text">
+               • Resposta: Altere o texto dentro de <div class="faq-answer-inner">
+               • Estilos e Cores em HEX: configurados em :root no style.css
+               ────────────────────────────────────────────────────────────────── -->
+          <div class="faq-item" id="faq-4">
+            <button class="faq-question" onclick="toggleFaq('faq-4')" aria-expanded="false">
+              <span class="faq-num">04</span>
+              <span class="faq-q-text">Os tratamentos são seguros? Há contraindicações?</span>
+              <div class="faq-chevron" aria-hidden="true"><span class="faq-chevron-icon"></span></div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-wrap">
+                <div class="faq-answer-inner">
+                  <p>Sim, <span class="faq-highlight">segurança é prioridade absoluta</span>. Todos os procedimentos
+                    seguem rigorosos protocolos de biossegurança com produtos certificados e equipamentos de última
+                    geração.</p>
+                  <ul class="faq-bullets">
+                    <li>Roberta Marcella é profissional certificada e continuamente atualizada</li>
+                    <li>Avaliação de saúde e histórico médico antes de qualquer protocolo</li>
+                    <li>Contraindicações identificadas na avaliação, com alternativas indicadas</li>
+                    <li>Acompanhamento pós-sessão incluso para garantir os melhores resultados</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ─── QUESTÃO 05 ──────────────────────────────────────────────────
+               • Pergunta: Altere o texto dentro de <span class="faq-q-text">
+               • Resposta: Altere o texto dentro de <div class="faq-answer-inner">
+               • Estilos e Cores em HEX: configurados em :root no style.css
+               ────────────────────────────────────────────────────────────────── -->
+          <div class="faq-item" id="faq-5">
+            <button class="faq-question" onclick="toggleFaq('faq-5')" aria-expanded="false">
+              <span class="faq-num">05</span>
+              <span class="faq-q-text">Em quanto tempo verei os resultados?</span>
+              <div class="faq-chevron" aria-hidden="true"><span class="faq-chevron-icon"></span></div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-wrap">
+                <div class="faq-answer-inner">
+                  <p>Os resultados variam com o tratamento, o organismo e a regularidade das sessões:</p>
+                  <ul class="faq-bullets">
+                    <li><strong>Imediatos:</strong> melhora do viço e hidratação já na primeira sessão</li>
+                    <li><strong>Progressivos:</strong> redução de medidas e rejuvenescimento visíveis a partir da 3ª
+                      sessão</li>
+                    <li><strong>Duradouros:</strong> com o protocolo completo e cuidados em casa indicados</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ─── QUESTÃO 06 ──────────────────────────────────────────────────
+               • Pergunta: Altere o texto dentro de <span class="faq-q-text">
+               • Resposta: Altere o texto dentro de <div class="faq-answer-inner">
+               • Estilos e Cores em HEX: configurados em :root no style.css
+               ────────────────────────────────────────────────────────────────── -->
+          <div class="faq-item" id="faq-6">
+            <button class="faq-question" onclick="toggleFaq('faq-6')" aria-expanded="false">
+              <span class="faq-num">06</span>
+              <span class="faq-q-text">Onde fica o consultório e como chegar?</span>
+              <div class="faq-chevron" aria-hidden="true"><span class="faq-chevron-icon"></span></div>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-wrap">
+                <div class="faq-answer-inner">
+                  <p>O consultório está em uma <span class="faq-highlight">região nobre, segura e de fácil
+                      acesso</span>.</p>
+                  <ul class="faq-bullets">
+                    <li>Estacionamento disponível nas proximidades</li>
+                    <li>Acesso facilitado por transporte público</li>
+                    <li>Endereço completo e instruções enviados após o agendamento</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ===================================================================
+             [SEÇÃO 7] CTA TIRAR DÚVIDAS NO WHATSAPP
+             • LOCALIZAÇÃO NO CSS: style.css (linhas ~2420 a ~2575)
+             • CLASSES: .faq-contact-card, .faq-contact-btn
+             • O QUE ALTERAR AQUI: textos do card e ação do botão Tirar Dúvidas
+             =================================================================== -->
+        <div class="faq-contact-card reveal">
+          <div class="faq-contact-icon">
+            <i data-lucide="message-circle-question"></i>
+          </div>
+          <div class="faq-contact-info">
+            <h4>Ainda com alguma dúvida?</h4>
+            <p>Nossa equipe está disponível no WhatsApp para orientar você e tirar todas as suas dúvidas.</p>
+          </div>
+          <button type="button" class="faq-contact-btn" onclick="abrirDuvidasWhatsApp(event)">
+            <i data-lucide="message-circle"></i>
+            <span>Tirar Dúvidas</span>
+          </button>
+        </div>
+
+      </section>
+
+    </main>
+
+  </div><!-- /.page-content -->
+
+  <!-- =========================================================================
+       [SEÇÃO 8] RODAPÉ INSTITUCIONAL (FOOTER)
+       • LOCALIZAÇÃO NO CSS: style.css (linhas ~2780 a ~2860 e ~3820 a ~3880)
+       • CLASSES: .bio-footer, .location-badge, .bio-footer-copy
+       • O QUE ALTERAR AQUI: endereço/texto de atendimento e copyright
+       ========================================================================= -->
+  <footer class="bio-footer reveal-fade">
+    <div class="bio-footer-noise" aria-hidden="true"></div>
+    <div class="bio-footer-inner">
+      <div class="location-badge">
+        <i data-lucide="map-pin" style="width: 13px; height: 13px;"></i>
+        <span>Atendimento com hora marcada</span>
+      </div>
+      <div class="bio-footer-divider" aria-hidden="true"></div>
+      <div class="bio-footer-copy">ROBERTA MARCELLA ESTÉTICA AVANÇADA © 2026 • <strong>TODOS OS DIREITOS
+          RESERVADOS</strong></div>
+    </div>
+  </footer>
+
+  <!-- Botão voltar ao topo -->
+  <button class="back-top" id="backTop" aria-label="Voltar ao topo"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+      <path d="M7 11.5V2.5M2.5 7 7 2.5 11.5 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
+
+  <!-- =========================================================================
+       [SEÇÃO 9] MODAL DE AGENDAMENTO PERSONALIZADO (POPUP)
+       • LOCALIZAÇÃO NO CSS: style.css (linhas ~2870 a ~3135)
+       • CLASSES: .agend-overlay, .agend-modal, .agend-form, .agend-field, .agend-btn-send
+       • O QUE ALTERAR AQUI: campos do formulário (nome, whats, sexo, idade, cidade, etc.)
+       ========================================================================= -->
+  <div class="agend-overlay" id="agendOverlay" role="dialog" aria-modal="true" aria-labelledby="agendTitle">
+    <div class="agend-modal" id="agendModal">
+
+      <!-- Faixa dourada vem do ::before do .agend-modal -->
+
+      <!-- Estado de sucesso (oculto até envio) -->
+      <div class="agend-success" id="agendSuccess">
+        <div class="agend-success-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <h3>Solicitação enviada!</h3>
+        <p>O WhatsApp da clínica será aberto com seus dados já preenchidos. Aguarde o contato da Roberta Marcella. 🌸
+        </p>
+      </div>
+
+      <div class="agend-header">
+        <div class="agend-header-text">
+          <div class="agend-eyebrow">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+            Agendamento
+          </div>
+          <h2 class="agend-title" id="agendTitle">Agendar Avaliação<br>Personalizada</h2>
+          <p class="agend-subtitle">Preencha os campos abaixo e enviaremos sua solicitação diretamente pelo WhatsApp.
+          </p>
+        </div>
+        <button class="agend-close" onclick="closeAgendamento()" aria-label="Fechar">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" aria-hidden="true">
+            <line x1="1" y1="1" x2="13" y2="13" />
+            <line x1="13" y1="1" x2="1" y2="13" />
+          </svg>
+        </button>
+      </div>
+
+      <form class="agend-form" id="agendForm" novalidate onsubmit="enviarAgendamento(event)">
+
+        <!-- Nome completo -->
+        <div class="agend-field" id="field-nome">
+          <label class="agend-label" for="agend-nome">Nome completo <span>*</span></label>
+          <input class="agend-input" type="text" id="agend-nome" name="nome" placeholder="Seu nome" autocomplete="name">
+          <span class="agend-error" id="err-nome">Por favor, informe seu nome.</span>
+        </div>
+
+        <!-- WhatsApp -->
+                <!-- Sexo, Idade, Cidade -->
+        <div class="agend-field" id="field-sexo">
+          <label class="agend-label" for="agend-sexo">Sexo <span>*</span></label>
+          <select class="agend-select" id="agend-sexo" name="sexo" required>
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
+
+        <div class="agend-field" id="field-idade">
+          <label class="agend-label" for="agend-idade">Idade <span>*</span></label>
+          <select class="agend-select" id="agend-idade" name="idade" required>
+            <option value="18+">Mais de 18 anos</option>
+            <option value="-18">Menos de 18 anos</option>
+          </select>
+        </div>
+
+        <div class="agend-field" id="field-cidade">
+          <label class="agend-label" for="agend-cidade">Cidade / Localização <span>*</span></label>
+          <input class="agend-input" type="text" id="agend-cidade" name="cidade" placeholder="Ex: Maceió, Arapiraca" required>
+          <span class="agend-error" id="err-cidade">Por favor, informe sua cidade.</span>
+        </div>
+
+        <!-- Procedimento desejado -->
+        <div class="agend-field" id="field-proc">
+          <label class="agend-label" for="agend-proc">Procedimento de interesse <span>*</span></label>
+          <select class="agend-select" id="agend-proc" name="proc">
+            <option value="">Selecione um procedimento…</option>
+            <option value="Avaliação Inicial (não sei ainda)">Avaliação Inicial (não sei ainda)</option>
+            <optgroup label="✦ Facial">
+              <option value="Limpeza de Pele Profunda">Limpeza de Pele Profunda</option>
+              <option value="Protocolo Rejuvenescimento Facial">Protocolo Rejuvenescimento Facial</option>
+              <option value="Peeling Químico">Peeling Químico</option>
+              <option value="Microagulhamento">Microagulhamento</option>
+              <option value="Bioestimuladores">Bioestimuladores</option>
+              <option value="Tratamento para Acne">Tratamento para Acne</option>
+              <option value="Drenagem Linfática Facial">Drenagem Linfática Facial</option>
+            </optgroup>
+            <option value="Outro (especificar nas observações)">Outro (especificar nas observações)</option>
+          </select>
+          <span class="agend-error" id="err-proc">Selecione o procedimento desejado.</span>
+        </div>
+
+        <!-- Observações -->
+        <div class="agend-field">
+          <label class="agend-label" for="agend-obs">Observações / O que você busca alcançar</label>
+          <textarea class="agend-textarea" id="agend-obs" name="obs"
+            placeholder="Conte um pouco sobre o que você gostaria de tratar ou melhorar…" rows="3"></textarea>
+        </div>
+
+        <!-- Aviso de privacidade -->
+        <div class="agend-privacy">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          <span>Suas informações são enviadas <strong>apenas para o WhatsApp da clínica</strong> e não ficam armazenadas
+            em nenhum servidor.</span>
+        </div>
+
+        <!-- Ações -->
+        <div class="agend-actions">
+          <button type="button" class="agend-btn-cancel" onclick="closeAgendamento()">Cancelar</button>
+          <button type="submit" class="agend-btn-send">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            Enviar pelo WhatsApp
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <!-- Lógica e Interatividade Centralizada (JavaScript) -->
+  <script src="script.js" defer></script>
+</body>
+
+</html>
