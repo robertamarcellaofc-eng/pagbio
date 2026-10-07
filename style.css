@@ -75,10 +75,10 @@
   --shadow-luxury-hover: 0 20px 42px -6px #8E5A5A29, 0 8px 20px -2px #CBAE831F;
   --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* ─── 2. FOTO OFICIAL DO HERO (Banner pasta assets) ────────────────────────── */
-  --hero-img-mobile: url('assets/banner-roberta-marcella.png');
-  --hero-img-tablet: url('assets/banner-roberta-marcella.png');
-  --hero-img-desktop: url('assets/banner-roberta-marcella.png');
+  /* ─── 2. FOTO OFICIAL DO HERO (Banner através de Links Online) ────────────── */
+  --hero-img-mobile: url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=760&h=1200&auto=format&fit=crop');
+  --hero-img-tablet: url('https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=1200&h=1000&auto=format&fit=crop');
+  --hero-img-desktop: url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=1920&auto=format&fit=crop');
 
   /* ─── 2b. IMAGEM LATERAL DOS CARDS 100% DENTRO DO CONTAINER ───────────────
      A imagem fica TOTALMENTE contida dentro do card (sem passar do container),
@@ -639,7 +639,7 @@ html.no-js .reveal-text .word {
   background-image:
     /* Grain sutil por cima */
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.80' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23g)' opacity='0.6'/%3E%3C/svg%3E"),
-    /* Textura damask premium (imagem gerada) */
+    /* Textura damask premium original */
     url('assets/hero-texture-premium.jpg');
 
   background-repeat: repeat, repeat;
