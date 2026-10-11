@@ -1,35 +1,4 @@
 
-/* ─── SINCRONIZAÇÃO RESPONSIVA DAS IMAGENS DO HERO (LINKS HTTPS DIRETOS) ──── */
-function aplicarConfiguracoesHero() {
-  try {
-    var cfg = window.CONFIG_ROBERTA;
-    if (!cfg) return;
-    var root = document.documentElement;
-    if (cfg.heroImgDesktop) {
-      root.style.setProperty('--hero-img-desktop', "url('" + cfg.heroImgDesktop + "')");
-      var imgMain = document.getElementById('heroImgMain');
-      if (imgMain) imgMain.src = cfg.heroImgDesktop;
-    }
-    if (cfg.heroImgTablet) {
-      root.style.setProperty('--hero-img-tablet', "url('" + cfg.heroImgTablet + "')");
-      var srcTablet = document.getElementById('heroSourceTablet');
-      if (srcTablet) srcTablet.srcset = cfg.heroImgTablet;
-    }
-    if (cfg.heroImgMobile) {
-      root.style.setProperty('--hero-img-mobile', "url('" + cfg.heroImgMobile + "')");
-      var srcMobile = document.getElementById('heroSourceMobile');
-      if (srcMobile) srcMobile.srcset = cfg.heroImgMobile;
-    }
-    if (cfg.heroTextureImg) {
-      root.style.setProperty('--hero-texture-img', "url('" + cfg.heroTextureImg + "')");
-    }
-  } catch (err) {
-    console.warn('Configuração de hero aplicada com sucesso:', err);
-  }
-}
-aplicarConfiguracoesHero();
-document.addEventListener('DOMContentLoaded', aplicarConfiguracoesHero);
-
 /**
  * ===================================================================
  * ROBERTA MARCELA ESTÉTICA - JAVASCRIPT PRINCIPAL
@@ -66,7 +35,6 @@ document.addEventListener('DOMContentLoaded', aplicarConfiguracoesHero);
       }
     }
 
-    /* =========================================================
     /* =========================================================
        PLAYER DE VÍDEO — 100% funcional e tolerante a erros
        ========================================================= */
